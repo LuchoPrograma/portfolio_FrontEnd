@@ -8,6 +8,7 @@ import { AboutComponent } from './components/about/about.component';
 import { EducationAndExperienceComponent } from './components/education-and-experience/education-and-experience.component';
 import { HardSoftSkillsComponent } from './components/hard-soft-skills/hard-soft-skills.component';
 import { ProjectsComponent } from './components/projects/projects.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { ProjectsComponent } from './components/projects/projects.component';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

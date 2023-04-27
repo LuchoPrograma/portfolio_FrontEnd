@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { faAdd,faPen,faTrash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-hard-soft-skills',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./hard-soft-skills.component.css']
 })
 export class HardSoftSkillsComponent {
+  faPen = faPen;
+  faAdd = faAdd;
+  faTrash = faTrash;
 
 }
