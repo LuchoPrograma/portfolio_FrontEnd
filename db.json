@@ -1,0 +1,80 @@
+{
+    "persona" : {
+       "apellido" : "Federicci",
+       "nombre" : "Luciano Augusto",
+       "acercaDe" : "Estudiante de Programación",
+       "urlFoto" : "./assets/imágenes/profile-picture.jpg"
+    } ,
+    "experiencia" : [
+       {
+         "urlLogo": "./assets/inti.png",
+         "institucion" : "Instituro Nacional de Tecnología Educativa (INTI)",
+         "cargo" : "Profesor Sincronico YoProgramo 2",
+         "fechaDesde" : "2022-02-01",
+         "fechaHasta" : "2022-09-31"
+      },
+       {
+         "urlLogo": "./assets/inti.png",
+         "institucion" : "Instituro Nacional de Tecnología Educativa (INTI)",
+         "cargo" : "Profesor Sincronico YoProgramo 4",
+         "fechaDesde" : "2022-10-01",
+         "fechaHasta" : "Actualidad"
+      }
+    ] ,
+    "educacion" : [
+       {
+          "urlLogo": "./assets/imágenes/uncuyo.jpg",
+          "institucion" : "Universidad Nacional de Cuyo (UNCuyo) ",
+          "titulo" : "Tecnicatura en Desarrollo de Software",
+          "fecha" : "En curso"
+        },
+        {
+          "urlLogo": "./assets/imágenes/arg-programa.png",
+          "institucion" : "Argentina Programa",
+          "titulo" : "Desarrollador Web Full-Stack",
+          "fecha" : "En curso"
+        },
+       {
+         "urlLogo": "./assets/imágenes/cuc.jpg",
+          "institucion" : "Colegio Universitario Central",
+          "titulo" : "Bachiller en Artes Plásticas",
+          "fecha" : "2017"
+       }
+    ]
+    ,
+    "habilidades" : [
+       {  
+          "habilidad" : "html/css",
+          "porcentaje": "25"
+       },
+       {  
+          "habilidad" : "java",
+          "porcentaje": "10"
+       },
+       {  
+          "habilidad" : "angular",
+          "porcentaje": "70"
+       },
+       {  
+          "habilidad" : "scrum",
+          "porcentaje": "50"
+       }
+    ]
+    ,
+    "proyectos" : [
+       {
+          "nombre": "Portfolio web",
+          "descripcion": "Proyecto final realizado durante el cursado de Argentina Programa #YoProgramo.",
+          "urlProyecto": "https://github.com/LuchoPrograma",
+          "fecha":"En curso"
+       },
+       {
+          "nombre": "Lista de Tareas",
+          "descripcion": "Ejercicio realizado para aplicar los conocimientos aprendidos en FrontEnd con Angular",
+          "urlProyecto": "https://github.com/LuchoPrograma/task-list",
+          "fecha":"Abril 2023"
+       }
+ 
+    ]
+ }
+ 

@@ -1,4 +1,46 @@
-<section class="card rounded-bottom-0" id="experiencia" id="experiencia-y-educacion">
+<!-- Educación  -->
+<section class="card rounded-bottom-0" id="educación">
+  <div class="row card-body">
+    <div class="col">
+      <h2 class="card-title"> Educación </h2>
+    </div>
+    <fa-icon class="col" [icon]="faAdd"></fa-icon>
+  </div>
+
+  <div *ngFor="let edu of education">
+    <div class="card-body mx-5 mb-3">
+      <div class="row">
+        <div class="col container text-center img-fluid align-items-end" style="max-width: 200px; max-height: 100px;">
+          <img style="max-width: 200px; max-height: 100px;" [src]="edu.urlLogo" alt="Logo">
+        </div>
+
+        <div class="col">
+
+          <div class="row">
+            <div class="col">
+              <h5 class="card-title ">{{edu.institucion}}</h5>
+              <h6 class="card-text">{{edu.titulo}}</h6>
+              <p class="card-text">Infromación sobre el instituto o curso donde se estudió... This is a wider card with
+                supporting
+              </p>
+            </div>
+
+            <div class="col text-start">
+              <div class="row">
+                <fa-icon class="col" [icon]="faPen" (click)="onEdit(edu)"></fa-icon>
+                <fa-icon class="col"[icon]="faTrash" (click)="onDelete(edu)"></fa-icon>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<section class="card mb-3 rounded-top-0" id="experiencia" id="experiencia-y-educacion">
 
   <div class="row card-body">
     <div class="col">
@@ -7,75 +49,28 @@
     <fa-icon class="col" [icon]="faAdd"></fa-icon>
   </div>
 
-  <div class="card-body mx-5 mb-3">
+  <div *ngFor="let exp of experience">
+    <div class="card-body mx-5 mb-3">
 
-    <div class="row">
-      <div class="col container text-center" style="background-color: grey; max-width: 200px; max-height: 100px;">
-        Logo
-      </div>
-      <div class="col">
-
-        <div class="row">
-          <div class="col">
-            <h5 class="card-title ">Título del puesto 1</h5>
-            <p class="card-text">AñoInicio - AñoFinalizado</p>
-            <p class="card-text">Descripcion del puesto de trabajo... This is a wider card with supporting
-            </p>
-          </div>
-          <div class="col text-start">
-            <fa-icon [icon]="faPen"></fa-icon>
-            <fa-icon [icon]="faTrash"></fa-icon>
-          </div>
+      <div class="row">
+        <div class="col container text-center" style="background-color: grey; max-width: 200px; max-height: 100px;">
+          <img style="max-width: 200px; max-height: 100px;" [src]="exp.urlLogo" alt="Logo">
         </div>
-      </div>
+        <div class="col">
 
-    </div>
-  </div>
-
-  <div class="card-body mx-5 mb-3">
-
-    <div class="row">
-      <div class="col container text-center" style="background-color: grey; max-width: 200px; max-height: 100px;">
-        Logo
-      </div>
-      <div class="col">
-
-        <div class="row">
-          <div class="col">
-            <h5 class="card-title ">Título del puesto 2</h5>
-            <p class="card-text">AñoInicio - AñoFinalizado</p>
-            <p class="card-text">Descripcion del puesto de trabajo... This is a wider card with supporting
-            </p>
-          </div>
-          <div class="col text-start">
-            <fa-icon [icon]="faPen"></fa-icon>
-            <fa-icon [icon]="faTrash"></fa-icon>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="card-body mx-5 mb-3">
-
-    <div class="row">
-      <div class="col container text-center" style="background-color: grey; max-width: 200px; max-height: 100px;">
-        Logo
-      </div>
-
-      <div class="col">
-
-        <div class="row">
-          <div class="col">
-            <h5 class="card-title ">Título del puesto 3</h5>
-            <p class="card-text">AñoInicio - AñoFinalizado</p>
-            <p class="card-text">Descripcion del puesto de trabajo... This is a wider card with supporting
-            </p>
-          </div>
-          <div class="col text-start">
-            <fa-icon [icon]="faPen"></fa-icon>
-            <fa-icon [icon]="faTrash"></fa-icon>
+          <div class="row">
+            <div class="col">
+              <h5 class="card-title ">{{exp.cargo}}</h5>
+              <p class="card-text">{{exp.fechaDesde}} / {{exp.fechaHasta}}</p>
+              <p class="card-text">{{exp.institucion}}
+              </p>
+            </div>
+            <div class="col text-start">
+              <div class="row">
+                <fa-icon class="col" [icon]="faPen" (click)="onEdit(exp)"></fa-icon>
+                <fa-icon class="col" [icon]="faTrash" (click)="onDelete(exp)"></fa-icon>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -84,61 +79,3 @@
 
 </section>
 
-<!-- Educación  -->
-<section class="card mb-3 rounded-top-0" id="educación">
-  <div class="row card-body">
-    <div class="col">
-      <h2 class="card-title"> Educación </h2>
-    </div>
-    <fa-icon class="col" [icon]="faAdd"></fa-icon>
-  </div>
-
-  <div class="card-body mx-5 mb-3">
-    <div class="row">
-      <div class="col container text-center" style="background-color: grey; max-width: 200px; max-height: 100px;">
-        Logo
-      </div>
-
-      <div class="col">
-
-        <div class="row">
-          <div class="col">
-            <h5 class="card-title ">Curso / Institución / Certificado </h5>
-            <p class="card-text">AñoInicio - AñoFinalizado</p>
-            <p class="card-text">Infromación sobre el instituto o curso donde se estudió... This is a wider card with supporting
-            </p>
-          </div>
-          <div class="col text-start">
-            <fa-icon [icon]="faPen"></fa-icon>
-            <fa-icon [icon]="faTrash"></fa-icon>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="card-body mx-5 mb-3">
-    <div class="row">
-      <div class="col container text-center" style="background-color: grey; max-width: 200px; max-height: 100px;">
-        Logo
-      </div>
-
-      <div class="col">
-
-        <div class="row">
-          <div class="col">
-            <h5 class="card-title ">Curso / Institución / Certificado </h5>
-            <p class="card-text">AñoInicio - AñoFinalizado</p>
-            <p class="card-text">Infromación sobre el instituto o curso donde se estudió... This is a wider card with supporting
-            </p>
-          </div>
-          <div class="col text-start">
-            <fa-icon [icon]="faPen"></fa-icon>
-            <fa-icon [icon]="faTrash"></fa-icon>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-</section>

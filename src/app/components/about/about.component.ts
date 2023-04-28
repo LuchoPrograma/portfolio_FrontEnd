@@ -1,5 +1,11 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
+
+import { PortfolioService } from 'src/app/services/portfolio.service';
+
 import { faPen} from '@fortawesome/free-solid-svg-icons'
+import { Person } from 'src/app/portfolio';
+
+
 
 
 @Component({
@@ -7,6 +13,19 @@ import { faPen} from '@fortawesome/free-solid-svg-icons'
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.css']
 })
-export class AboutComponent {
+export class AboutComponent{
+
+  aboutData:any;
+
   fapen = faPen;
+
+  constructor(private datosPortfolio:PortfolioService){
+  }
+  ngOnInit():void{
+    
+    this.datosPortfolio.obtenerDatos().subscribe(data =>{
+      this.aboutData = data.persona;
+    });
+    
+  }
 }
