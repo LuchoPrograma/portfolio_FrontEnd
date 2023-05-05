@@ -14,13 +14,16 @@ export class ProjectsComponent {
   faAdd = faAdd;
   faTrash = faTrash;
 
-  constructor(private dataPortfolio:PortfolioService){}
+  constructor(private portfolioData:PortfolioService){}
 
   ngOnInit():void{
-    this.dataPortfolio.obtenerDatos().subscribe(data => {
-      this.projects = data.proyectos;
+    this.portfolioData.getProjects().subscribe(data => {
+      this.projects = data;
     })
   }
 
+  onDeleteProject(item:any){
+    this.portfolioData.deleteProject(item).subscribe(() => (this.projects = this.projects.filter((t: { id: any; }) => t.id !== item.id) ))
+  }
 
 }

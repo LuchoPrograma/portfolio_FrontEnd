@@ -8,11 +8,11 @@
 
 
   <div *ngFor="let skill of skills">
-    <div class="card-body mb-5">
+    <div class="card-body mb-5 mx-5">
       <div class="row">
         <h5 class="col display-6">{{skill.habilidad}}<small class="text-muted fst-italic"> ~ With faded secondary text</small> </h5>
         <fa-icon class="col" [icon]="faPen"></fa-icon>
-        <fa-icon class="col" [icon]="faTrash"></fa-icon>
+        <fa-icon class="col" [icon]="faTrash" (click)="onDeleteSkill(skill)"></fa-icon>
       </div>
 
       <div class="progress" role="progressbar" aria-label="striped example" aria-valuenow="50"

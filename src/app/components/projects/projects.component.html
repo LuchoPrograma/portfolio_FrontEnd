@@ -12,7 +12,7 @@
         <div class="row">
           <h5 class="card-title col">{{proyectos.nombre}}</h5>
           <fa-icon class="col" [icon]="faPen"></fa-icon>
-          <fa-icon class="col" [icon]="faTrash"></fa-icon>
+          <fa-icon class="col" [icon]="faTrash" (click)="onDeleteProject(proyectos)"></fa-icon>
         </div>
         
         <p class="card-text">{{proyectos.descripcion}}</p>

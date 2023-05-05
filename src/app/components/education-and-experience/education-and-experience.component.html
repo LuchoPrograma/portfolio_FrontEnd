@@ -4,8 +4,75 @@
     <div class="col">
       <h2 class="card-title"> Educación </h2>
     </div>
-    <fa-icon class="col" [icon]="faAdd"></fa-icon>
+    <fa-icon class="col p-2 rounded-circle btn btn-primary" style="color: white;" [icon]="faAdd"
+      (click)="showAddEduc =! showAddEduc"></fa-icon>
   </div>
+
+  <!-- Interfaz agregar educacion-->
+  <form class="card-body rounded mx-5 btn-primary"  *ngIf="showAddEduc">
+    <h2 class="card-title text-center"> Agregar Educación </h2>
+
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Institución</label>
+      <input class="form-control" id="exampleFormControlInput1" placeholder="Nombre de la Institución">
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Título obtenido / a obtener</label>
+      <input class="form-control" id="exampleFormControlInput1" placeholder="Nombre del Título">
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label">Descripción</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+        placeholder="Breve descripción"></textarea>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md mb-3 mx-3 text-center">
+        <label for="exampleFormControlInput1" class="form-label">Fecha de inicio</label>
+        <div class="row">
+          <div class="col">
+            <input class="form-control text-center" id="exampleFormControlInput1" placeholder="Día">
+          </div>
+          <div class="col">
+            <input class="form-control text-center" id="exampleFormControlInput1" placeholder="Mes">
+          </div>
+          <div class="col">
+            <input class="form-control text-center" id="exampleFormControlInput1" placeholder="Año">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md mb-3 mx-3 text-center">
+        <label for="exampleFormControlInput1" class="form-label">Fecha de finalización</label>
+        <div class="row">
+          <div class="col">
+            <input class="form-control text-center" id="exampleFormControlInput1" placeholder="Día">
+          </div>
+          <div class="col">
+            <input class="form-control text-center" id="exampleFormControlInput1" placeholder="Mes">
+          </div>
+          <div class="col">
+            <input class="form-control text-center" id="exampleFormControlInput1" placeholder="Año">
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="input-group mb-3 mt-5">
+      <label class="input-group-text" for="inputGroupFile02">Logo de la Institución</label>
+      <input type="file" class="form-control" id="inputGroupFile02">
+    </div>
+
+    <div class="mb-3 mt-5 text-center">
+      <button type="button" class="btn btn-primary mx-2" (click)="showAddEduc = false">Cancelar</button>
+      <button type="submit" class="btn btn-primary">Subir</button>
+    </div>
+
+  </form>
+
 
   <div *ngFor="let edu of education">
     <div class="card-body mx-5 mb-3">
@@ -25,16 +92,31 @@
               </p>
             </div>
 
-            <div class="col text-start">
-              <div class="row">
-                <fa-icon class="col" [icon]="faPen" (click)="onEdit(edu)"></fa-icon>
-                <fa-icon class="col"[icon]="faTrash" (click)="onDelete(edu)"></fa-icon>
+            <div class="col">
+              <div class="row" >
+                <fa-icon class="col p-2 rounded-circle btn btn-primary"  style="color: white;"
+                  [icon]="faPen" (click)="onEdit(edu)"></fa-icon>
+                <fa-icon class="col p-2 rounded-circle btn btn-primary" style="color: white;"
+                  [icon]="faTrash" (click)="onDeleteEducation(edu)"></fa-icon>
               </div>
             </div>
 
           </div>
         </div>
       </div>
+
+      <!-- Interfaz edicion -->
+
+      <!-- <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      </div> -->
+
+
     </div>
   </div>
 
@@ -66,9 +148,11 @@
               </p>
             </div>
             <div class="col text-start">
-              <div class="row">
-                <fa-icon class="col" [icon]="faPen" (click)="onEdit(exp)"></fa-icon>
-                <fa-icon class="col" [icon]="faTrash" (click)="onDelete(exp)"></fa-icon>
+              <div class="row" >
+                <fa-icon class="col p-2 rounded-circle btn btn-primary"  style="color: white;"
+                  [icon]="faPen" (click)="onEdit(exp)"></fa-icon>
+                <fa-icon class="col p-2 rounded-circle btn btn-primary" style="color: white;"
+                  [icon]="faTrash" (click)="onDeleteExperience(exp)"></fa-icon>
               </div>
             </div>
           </div>
@@ -78,4 +162,3 @@
   </div>
 
 </section>
-

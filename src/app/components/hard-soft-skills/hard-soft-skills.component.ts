@@ -18,10 +18,13 @@ export class HardSoftSkillsComponent {
   }
 
   ngOnInit():void{
-    this.portfolioData.obtenerDatos().subscribe(data => {
-      this.skills = data.habilidades;
-      console.log(this.skills)
+    this.portfolioData.getSkills().subscribe(data => {
+      this.skills = data;
     })
+  }
+
+  onDeleteSkill(item:any){
+    this.portfolioData.deleteSkill(item).subscribe(() => (this.skills = this.skills.filter((t: { id: any; }) => t.id !== item.id) ))
   }
 
 }

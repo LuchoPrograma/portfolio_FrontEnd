@@ -10,6 +10,7 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 export class EducationAndExperienceComponent {
   education:any;
   experience:any;
+  showAddEduc:boolean = true;
 
   faPen = faPen;
   faAdd = faAdd;
@@ -19,14 +20,29 @@ export class EducationAndExperienceComponent {
   }
 
   ngOnInit():void{
-    this.portfolioData.obtenerDatos().subscribe(data =>{
-      this.education = data.educacion;
-      this.experience = data.experiencia;
+    this.portfolioData.getEducation().subscribe(data =>{
+      this.education = data;
+      //this.experience = data.experiencia;
+    });
+    this.portfolioData.getExperience().subscribe(data =>{
+      this.experience = data;
+      //this.experience = data.experiencia;
     });
   }
 
-  onDelete(item:any){
+  showAdd(){
+    console.log("click")
+    this.showAddEduc =! this.showAddEduc;
+    console.log(this.showAddEduc);
+  }
+
+  onDeleteEducation(item:any){
     console.log("Borrar!")
+    this.portfolioData.deleteEducation(item).subscribe(() => (this.education = this.education.filter((t: { id: any; }) => t.id !== item.id) ))
+  }
+  onDeleteExperience(item:any){
+    console.log("Borrar!")
+    this.portfolioData.deleteExperience(item).subscribe(() => (this.experience = this.experience.filter((t: { id: any; }) => t.id !== item.id) ))
   }
 
   onEdit(item:any){

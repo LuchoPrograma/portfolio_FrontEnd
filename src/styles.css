@@ -1,7 +1,8 @@
 body{
     background-color: rgb(56, 56, 56);
 }
- fa-icon{
-    margin-right: 10px;
+ fa-icon {
+    margin: 5px;
     cursor: pointer;
+    text-align: center;
  }

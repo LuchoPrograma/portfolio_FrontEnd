@@ -23,8 +23,8 @@ export class AboutComponent{
   }
   ngOnInit():void{
     
-    this.datosPortfolio.obtenerDatos().subscribe(data =>{
-      this.aboutData = data.persona;
+    this.datosPortfolio.getAbout().subscribe(data =>{
+      this.aboutData = data;
     });
     
   }
