@@ -9,6 +9,9 @@ import { EducationAndExperienceComponent } from './components/education-and-expe
 import { HardSoftSkillsComponent } from './components/hard-soft-skills/hard-soft-skills.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { LoginComponent } from './components/login/login.component';
+import { AboutEditComponent } from './components/forms/about-edit/about-edit.component';
+import { EduExpAddComponent } from './components/forms/edu-exp-add/edu-exp-add.component';
 
 
 @NgModule({
@@ -18,7 +21,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AboutComponent,
     EducationAndExperienceComponent,
     HardSoftSkillsComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    LoginComponent,
+    AboutEditComponent,
+    EduExpAddComponent
 
   ],
   imports: [

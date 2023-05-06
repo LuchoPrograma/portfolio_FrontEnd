@@ -1,0 +1,50 @@
+
+<div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="modalEdicionLabel">Editar Acerca-de</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+            <form>
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="apellido" lass="form-label">Nombre</label>
+                        <input type="text" class="form-control" [value]='nombre'>
+                    </div>
+                    <div class="col">
+                        <label for="apellido" lass="form-label">Apellido</label>
+                        <input type="text" class="form-control" [value]='apellido'>
+                    </div>
+                </div>
+            
+                <div class="mb-3">
+                    <label for="titulo" lass="form-label">Título obtenido</label>
+                    <input type="text" for="titulo" class="form-control" [value]='titulo'>
+                </div>
+            
+                <div>
+                    <label for="descripcion">Descripcion</label>
+                    <textarea type="text" class="form-control" rows="3">{{descripcion}}</textarea>
+                </div>
+            
+            
+                <div class="input-group mb-3 mt-3">
+                    <label class="input-group-text" for="inputGroupFile02">Imágen de perfil</label>
+                    <input type="file" class="form-control" id="inputGroupFile02">
+                </div>
+            </form>
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-primary">Guardar cambios</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+

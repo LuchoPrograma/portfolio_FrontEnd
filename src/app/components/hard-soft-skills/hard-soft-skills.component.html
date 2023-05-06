@@ -15,11 +15,12 @@
         <fa-icon class="col" [icon]="faTrash" (click)="onDeleteSkill(skill)"></fa-icon>
       </div>
 
-      <div class="progress" role="progressbar" aria-label="striped example" aria-valuenow="50"
+      <div class="progress" role="progressbar" aria-label="striped example" [attr.aria-valuenow]="skill.porcentaje"
         aria-valuemin="0" aria-valuemax="100">
-        <div class="progress-bar progress-bar-striped progress-bar bg-danger" style="width: 50%;">
+        <div class="progress-bar progress-bar-striped progress-bar bg-danger" [style.width]="skill.porcentaje">
         </div>
       </div>
     </div>
   </div>
+
 </div>

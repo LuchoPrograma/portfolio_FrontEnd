@@ -3,33 +3,45 @@
     "id": "1",
     "apellido": "Federicci",
     "nombre": "Luciano Augusto",
-    "acercaDe": "Estudiante de Programación",
+    "titulo": "Junior Full-Stack Developer",
+    "acercaDe": "Estudiante de Desarrollo de Software, concretamente como programador Web Full-Stack. Curioso, entusiasta de la Tecnología, siempre con ganas de aprender más",
     "urlFoto": "./assets/imágenes/profile-picture.jpg"
   },
   "experiencia": [
     {
       "id": "1",
       "urlLogo": "./assets/inti.png",
-      "institucion": "Instituro Nacional de Tecnología Educativa (INTI)",
+      "institucion": "Instituto Nacional de Tecnología Educativa (INTI)",
       "cargo": "Profesor Sincronico YoProgramo 2",
+      "descripcion": "Descripción de las tareas realizadas o infromación adicional sobre la empresa y los cargos... This is a wider card with supporting...",
       "fechaDesde": "2022-02-01",
       "fechaHasta": "2022-09-31"
     },
     {
       "id": "2",
       "urlLogo": "./assets/inti.png",
-      "institucion": "Instituro Nacional de Tecnología Educativa (INTI)",
+      "institucion": "Instituto Nacional de Tecnología Educativa (INTI)",
       "cargo": "Profesor Sincronico YoProgramo 4",
+      "descripcion": "Descripción de las tareas realizadas o infromación adicional sobre la empresa y los cargos... This is a wider card with supporting...",
       "fechaDesde": "2022-10-01",
       "fechaHasta": "Actualidad"
     }
   ],
   "educacion": [
     {
+      "id": "1",
+      "urlLogo": "./assets/imágenes/uncuyo.jpg",
+      "institucion": "Universidad Nacional de Cuyo (UNCuyo) ",
+      "titulo": "Tecnicatura en Desarrollo de Software",
+      "descripcion": "Descripción o infromación adicional sobre el instituto o curso donde se estudió... This is a wider card with supporting",
+      "fecha": "En curso"
+    },
+    {
       "id": "2",
       "urlLogo": "./assets/imágenes/arg-programa.png",
       "institucion": "Argentina Programa",
       "titulo": "Desarrollador Web Full-Stack",
+      "descripcion": "Descripción o infromación adicional sobre el instituto o curso donde se estudió... This is a wider card with supporting",
       "fecha": "En curso"
     },
     {
@@ -37,6 +49,7 @@
       "urlLogo": "./assets/imágenes/cuc.jpg",
       "institucion": "Colegio Universitario Central",
       "titulo": "Bachiller en Artes Plásticas",
+      "descripcion": "Descripción o infromación adicional sobre el instituto o curso donde se estudió... This is a wider card with supporting",
       "fecha": "2017"
     }
   ],
@@ -44,22 +57,22 @@
     {
       "id": "1",
       "habilidad": "html/css",
-      "porcentaje": "25"
+      "porcentaje": "25%"
     },
     {
       "id": "2",
       "habilidad": "java",
-      "porcentaje": "10"
+      "porcentaje": "10%"
     },
     {
       "id": "3",
       "habilidad": "angular",
-      "porcentaje": "70"
+      "porcentaje": "70%"
     },
     {
       "id": "4",
       "habilidad": "scrum",
-      "porcentaje": "50"
+      "porcentaje": "50%"
     }
   ],
   "proyectos": [

@@ -1,6 +1,4 @@
 <div class="card rounded-top-0 mb-3" id="acerca-de">
-  
-  
   <div class="row card-body">
     <div class="col" style="max-width: 200px;">
       <img style="max-width: 200px; max-height: 200px; " [src]="aboutData.urlFoto"
@@ -8,11 +6,73 @@
     </div>
 
     <div class="col">
-      <h1 class="card-title">{{aboutData.nombre + " " + aboutData.apellido}}</h1>
+      <h1 class="card-title mb-4">{{aboutData.nombre + " " + aboutData.apellido}}</h1>
+      <h4 class="card-title mb-4">{{aboutData.titulo}}</h4>
       <p class="card-text">{{aboutData.acercaDe}}</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago </small></p>
     </div>
-
-    <fa-icon class="col" [icon]="fapen"></fa-icon>
+    <fa-icon type="button" class="col p-2 rounded-circle btn btn-primary" [icon]="fapen"
+    data-bs-toggle="modal" data-bs-target="#exampleModal"
+    ></fa-icon>
   </div>
 </div>
+
+<app-about-edit class="modal fade" id="exampleModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+    nombre="{{aboutData.nombre}}"
+    apellido="{{aboutData.apellido}}"
+    titulo="{{aboutData.titulo}}"
+    descripcion="{{aboutData.acercaDe}}"
+
+  > </app-about-edit> 
+
+
+
+
+<!-- Modal -->
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="modalEdicionLabel">Modal title</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+  
+            <form>
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="apellido" lass="form-label">Nombre</label>
+                        <input type="text" class="form-control" [value]='aboutData.nombre'>
+                    </div>
+                    <div class="col">
+                        <label for="apellido" lass="form-label">Apellido</label>
+                        <input type="text" class="form-control" [value]='aboutData.apellido'>
+                    </div>
+                </div>
+            
+                <div class="mb-3">
+                    <label for="titulo" lass="form-label">Título obtenido</label>
+                    <input type="text" for="titulo" class="form-control" [value]='aboutData.titulo'>
+                </div>
+            
+                <div>
+                    <label for="descripcion">Descripcion</label>
+                    <textarea type="text" class="form-control" rows="3">{{aboutData.acercaDe}}</textarea>
+                </div>
+            
+            
+                <div class="input-group mb-3 mt-3">
+                    <label class="input-group-text" for="inputGroupFile02">Imágen de perfil</label>
+                    <input type="file" class="form-control" id="inputGroupFile02">
+                </div>
+            </form>
+  
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+    </div>
+  </div>
+
+</div> -->
+

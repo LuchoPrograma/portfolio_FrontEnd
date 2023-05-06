@@ -1,3 +1,4 @@
+<!---->
 <nav class="navbar bg-primary mb-3" data-bs-theme="dark">
     <div class="container-fluid">
       <a class="navbar-brand">
@@ -15,14 +16,39 @@
           <a class="nav-link disabled">Linkdn</a>
         </li>
         <li>
-          <form class="d-flex">
-            <button type="button" class="btn btn-outline-warning">Login</button>
+          <form class="d-flex"> <!--Boton de logeo-->
+            <button type="button" class="btn btn-outline-warning" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Iniciar Sesión</button>
           </form>
         </li>
       </ul>
     </div>
   </nav>
 
+<!-- Interfaz de Logeo -->
+<div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Iniciar Sesión</h5>
+    <h6 class="offcanvas-title" id="offcanvasWithBothOptionsLabel"> Acceder al modo edición</h6>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+
+    <form>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Dirección de email</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+        <input type="password" class="form-control" id="exampleInputPassword1">
+      </div>
+      <button type="submit" class="btn btn-primary">Ingresar</button>
+    </form>
+
+  </div>
+</div>
+
+<!--Banner-->
   <div class="container mx-auto rounded-bottom-0" id="banner">
     <img src="assets/imágenes/abanner.png" class="card-img-top" alt="banner">
   </div>

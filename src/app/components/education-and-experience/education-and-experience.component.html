@@ -4,77 +4,19 @@
     <div class="col">
       <h2 class="card-title"> Educación </h2>
     </div>
-    <fa-icon class="col p-2 rounded-circle btn btn-primary" style="color: white;" [icon]="faAdd"
-      (click)="showAddEduc =! showAddEduc"></fa-icon>
+    <fa-icon class="col p-2 rounded-circle btn btn-primary" [icon]="faAdd"
+      data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+    ></fa-icon>
   </div>
 
-  <!-- Interfaz agregar educacion-->
-  <form class="card-body rounded mx-5 btn-primary"  *ngIf="showAddEduc">
-    <h2 class="card-title text-center"> Agregar Educación </h2>
+  <app-edu-exp-add 
+    class="modal fade" id="staticBackdrop" data-bs-backdrop="static" 
+    data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" 
+    aria-hidden="true"
+    esEduc="1"
+  ></app-edu-exp-add>
 
-    <div class="mb-3">
-      <label for="exampleFormControlInput1" class="form-label">Institución</label>
-      <input class="form-control" id="exampleFormControlInput1" placeholder="Nombre de la Institución">
-    </div>
-
-    <div class="mb-3">
-      <label for="exampleFormControlInput1" class="form-label">Título obtenido / a obtener</label>
-      <input class="form-control" id="exampleFormControlInput1" placeholder="Nombre del Título">
-    </div>
-
-    <div class="mb-3">
-      <label for="exampleFormControlTextarea1" class="form-label">Descripción</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-        placeholder="Breve descripción"></textarea>
-    </div>
-
-    <div class="row mb-3">
-      <div class="col-md mb-3 mx-3 text-center">
-        <label for="exampleFormControlInput1" class="form-label">Fecha de inicio</label>
-        <div class="row">
-          <div class="col">
-            <input class="form-control text-center" id="exampleFormControlInput1" placeholder="Día">
-          </div>
-          <div class="col">
-            <input class="form-control text-center" id="exampleFormControlInput1" placeholder="Mes">
-          </div>
-          <div class="col">
-            <input class="form-control text-center" id="exampleFormControlInput1" placeholder="Año">
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md mb-3 mx-3 text-center">
-        <label for="exampleFormControlInput1" class="form-label">Fecha de finalización</label>
-        <div class="row">
-          <div class="col">
-            <input class="form-control text-center" id="exampleFormControlInput1" placeholder="Día">
-          </div>
-          <div class="col">
-            <input class="form-control text-center" id="exampleFormControlInput1" placeholder="Mes">
-          </div>
-          <div class="col">
-            <input class="form-control text-center" id="exampleFormControlInput1" placeholder="Año">
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="input-group mb-3 mt-5">
-      <label class="input-group-text" for="inputGroupFile02">Logo de la Institución</label>
-      <input type="file" class="form-control" id="inputGroupFile02">
-    </div>
-
-    <div class="mb-3 mt-5 text-center">
-      <button type="button" class="btn btn-primary mx-2" (click)="showAddEduc = false">Cancelar</button>
-      <button type="submit" class="btn btn-primary">Subir</button>
-    </div>
-
-  </form>
-
-
-  <div *ngFor="let edu of education">
+  <div class="mb-3" *ngFor="let edu of education">
     <div class="card-body mx-5 mb-3">
       <div class="row">
         <div class="col container text-center img-fluid align-items-end" style="max-width: 200px; max-height: 100px;">
@@ -85,11 +27,10 @@
 
           <div class="row">
             <div class="col">
-              <h5 class="card-title ">{{edu.institucion}}</h5>
-              <h6 class="card-text">{{edu.titulo}}</h6>
-              <p class="card-text">Infromación sobre el instituto o curso donde se estudió... This is a wider card with
-                supporting
-              </p>
+              <h4 class="card-title ">{{edu.institucion}}</h4>
+              <h5 class="card-text">{{edu.titulo}}</h5>
+              <h6 class="card-text">{{edu.fecha}}</h6>
+              <p class="card-text">{{edu.descripcion}}</p>
             </div>
 
             <div class="col">
@@ -104,34 +45,33 @@
           </div>
         </div>
       </div>
-
-      <!-- Interfaz edicion -->
-
-      <!-- <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-      </div>
-      <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-      </div> -->
-
-
     </div>
   </div>
 
 </section>
 
+<!-- Experiencia -->
 <section class="card mb-3 rounded-top-0" id="experiencia" id="experiencia-y-educacion">
 
   <div class="row card-body">
     <div class="col">
       <h2 class="card-title"> Experiencia </h2>
     </div>
-    <fa-icon class="col" [icon]="faAdd"></fa-icon>
+    <fa-icon class="col p-2 rounded-circle btn btn-primary" style="color: white;"
+      data-bs-toggle="modal" data-bs-target="#staticBackdrop2"
+      [icon]="faAdd">
+    </fa-icon>
   </div>
 
-  <div *ngFor="let exp of experience">
+  <!-- Interfaz agregar educacion-->
+  <app-edu-exp-add 
+    class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" 
+    data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" 
+    aria-hidden="true"
+    esEduc="2"
+  ></app-edu-exp-add>
+
+  <div class="mb-3" *ngFor="let exp of experience">
     <div class="card-body mx-5 mb-3">
 
       <div class="row">
@@ -142,10 +82,10 @@
 
           <div class="row">
             <div class="col">
-              <h5 class="card-title ">{{exp.cargo}}</h5>
-              <p class="card-text">{{exp.fechaDesde}} / {{exp.fechaHasta}}</p>
-              <p class="card-text">{{exp.institucion}}
-              </p>
+              <h4 class="card-title ">{{exp.cargo}}</h4>
+              <h5 class="card-text">{{exp.institucion}}</h5>
+              <h6 class="card-text">{{exp.fechaDesde}} / {{exp.fechaHasta}}</h6>   
+              <p class="card-text">{{exp.descripcion}}</p>     
             </div>
             <div class="col text-start">
               <div class="row" >
@@ -160,5 +100,6 @@
       </div>
     </div>
   </div>
+
 
 </section>

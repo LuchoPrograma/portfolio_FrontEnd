@@ -1,0 +1,85 @@
+<div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+        <div class="modal-header">
+
+            <div [ngSwitch]="esEduc">
+                <h1 *ngSwitchCase="1" class="modal-title fs-5" id="staticBackdropLabel"> Agregar nueva Educación</h1>
+                <h1 *ngSwitchCase="2" class="modal-title fs-5" id="staticBackdropLabel"> Agregar nueva Experiencia Laboral</h1>
+            </div>
+            
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+            <form>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Institución</label>
+                    <input class="form-control" id="exampleFormControlInput1" placeholder="Nombre de la Institución">
+                </div>
+
+                <div class="mb-3">
+                    <div [ngSwitch]="esEduc">
+                        <div *ngSwitchCase="1">
+                            <label for="exampleFormControlInput1" class="form-label">Título obtenido / a obtener</label>
+                            <input class="form-control" id="exampleFormControlInput1" placeholder="Nombre del Título">
+                        </div>
+                        <div *ngSwitchCase="2">
+                            <label for="exampleFormControlInput1" class="form-label">Cargo ocupado</label>
+                            <input class="form-control" id="exampleFormControlInput1" placeholder="Nombre del Cargo">
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Descripción</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                        placeholder="Breve descripción"></textarea>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md mb-3 mx-3 text-center">
+                        <label for="exampleFormControlInput1" class="form-label">Fecha de inicio</label>
+                        <div class="row">
+                            <div class="col">
+                                <input class="form-control text-center" id="exampleFormControlInput1" placeholder="Día">
+                            </div>
+                            <div class="col">
+                                <input class="form-control text-center" id="exampleFormControlInput1" placeholder="Mes">
+                            </div>
+                            <div class="col">
+                                <input class="form-control text-center" id="exampleFormControlInput1" placeholder="Año">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md mb-3 mx-3 text-center">
+                        <label for="exampleFormControlInput1" class="form-label">Fecha de finalización</label>
+                        <div class="row">
+                            <div class="col">
+                                <input class="form-control text-center" id="exampleFormControlInput1" placeholder="Día">
+                            </div>
+                            <div class="col">
+                                <input class="form-control text-center" id="exampleFormControlInput1" placeholder="Mes">
+                            </div>
+                            <div class="col">
+                                <input class="form-control text-center" id="exampleFormControlInput1" placeholder="Año">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="input-group mb-3 mt-5">
+                    <label class="input-group-text" for="inputGroupFile02">Logo de la Institución</label>
+                    <input type="file" class="form-control" id="inputGroupFile02">
+                </div>
+            </form>
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-primary">Agregar</button>
+        </div>
+    </div>
+</div>

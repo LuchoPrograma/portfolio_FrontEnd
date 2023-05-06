@@ -10,7 +10,7 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 export class EducationAndExperienceComponent {
   education:any;
   experience:any;
-  showAddEduc:boolean = true;
+  showAddExp:boolean = false;
 
   faPen = faPen;
   faAdd = faAdd;
@@ -28,12 +28,6 @@ export class EducationAndExperienceComponent {
       this.experience = data;
       //this.experience = data.experiencia;
     });
-  }
-
-  showAdd(){
-    console.log("click")
-    this.showAddEduc =! this.showAddEduc;
-    console.log(this.showAddEduc);
   }
 
   onDeleteEducation(item:any){
