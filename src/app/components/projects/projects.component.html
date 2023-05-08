@@ -3,20 +3,27 @@
     <div class="col">
       <h2 class="card-title"> Proyectos </h2>
     </div>
-    <fa-icon class="col" [icon]="faAdd"></fa-icon>
+    <app-buttons typeButton="add" class="col d-flex justify-content-end"></app-buttons>
   </div>
 
   <div *ngFor="let proyectos of projects">
     <div class="card mx-5 mb-3">
       <div class="card-body">
         <div class="row">
-          <h5 class="card-title col">{{proyectos.nombre}}</h5>
-          <fa-icon class="col" [icon]="faPen"></fa-icon>
-          <fa-icon class="col" [icon]="faTrash" (click)="onDeleteProject(proyectos)"></fa-icon>
+
+          <div class="col">
+            <h5 class="card-title col">{{proyectos.nombre}}</h5>
+            <p class="card-text">{{proyectos.descripcion}}</p>
+            <a href={{proyectos.urlProyecto}} class="btn btn-primary">Ir al Proyecto</a>
+          </div>
+          <div class="col-1 d-flex justify-content-end">
+            <app-buttons typeButton="edit"></app-buttons>
+            <app-buttons typeButton="delete" (btnClick)="onDeleteProject(proyectos)">
+            </app-buttons>
+          </div>
+
         </div>
-        
-        <p class="card-text">{{proyectos.descripcion}}</p>
-        <a href={{proyectos.urlProyecto}} class="btn btn-primary">Ir al Proyecto</a>
+
       </div>
       <div class="card-footer">
         {{proyectos.fecha}}
@@ -24,33 +31,4 @@
     </div>
 
   </div>
-   
-    <!--
-    <div class="card mb-3 mx-5">
-        <div class="row g-0">
-           
-            <div class="col-md-4">
-                <img src="imágenes/Grey_full.png" class="img-fluid rounded-start" alt="imagen-proyecto">
-            </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title">Proyecto 3</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.
-                        This is a wider card with supporting text below as a natural lead-in to additional
-                        content. </p>
-                    <div class="card-body text-end">
-                        <a href="#" class="btn btn-primary">Ir al Proyecto</a>
-                    </div>
-
-
-
-                </div>
-            </div>
-            <div class="card-footer text-center text-muted">
-                13 de febrero de 2023
-            </div>
-        </div>
-    </div> -->
-
-  </div>
+</div>

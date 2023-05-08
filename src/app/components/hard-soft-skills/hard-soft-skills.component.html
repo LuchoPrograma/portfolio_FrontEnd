@@ -3,7 +3,7 @@
     <div class="col">
       <h2 class="card-title"> Hard & Soft Skills </h2>
     </div>
-    <fa-icon class="col" [icon]="faAdd"></fa-icon>
+    <app-buttons class="col d-flex justify-content-end" typeButton="add"></app-buttons>
   </div>
 
 
@@ -11,8 +11,10 @@
     <div class="card-body mb-5 mx-5">
       <div class="row">
         <h5 class="col display-6">{{skill.habilidad}}<small class="text-muted fst-italic"> ~ With faded secondary text</small> </h5>
-        <fa-icon class="col" [icon]="faPen"></fa-icon>
-        <fa-icon class="col" [icon]="faTrash" (click)="onDeleteSkill(skill)"></fa-icon>
+        <div class="col d-flex justify-content-end">
+          <app-buttons typeButton="edit"></app-buttons>
+          <app-buttons typeButton="delete" (btnClick)="onDeleteSkill(skill)"></app-buttons>
+        </div>
       </div>
 
       <div class="progress" role="progressbar" aria-label="striped example" [attr.aria-valuenow]="skill.porcentaje"

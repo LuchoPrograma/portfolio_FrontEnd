@@ -3,8 +3,8 @@
         <div class="modal-header">
 
             <div [ngSwitch]="esEduc">
-                <h1 *ngSwitchCase="1" class="modal-title fs-5" id="staticBackdropLabel"> Agregar nueva Educación</h1>
-                <h1 *ngSwitchCase="2" class="modal-title fs-5" id="staticBackdropLabel"> Agregar nueva Experiencia Laboral</h1>
+                <h1 *ngSwitchCase="'edu'" class="modal-title fs-5" id="staticBackdropLabel"> Agregar nueva Educación</h1>
+                <h1 *ngSwitchCase="'exp'" class="modal-title fs-5" id="staticBackdropLabel"> Agregar nueva Experiencia Laboral</h1>
             </div>
             
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -19,11 +19,11 @@
 
                 <div class="mb-3">
                     <div [ngSwitch]="esEduc">
-                        <div *ngSwitchCase="1">
+                        <div *ngSwitchCase="'edu'">
                             <label for="exampleFormControlInput1" class="form-label">Título obtenido / a obtener</label>
                             <input class="form-control" id="exampleFormControlInput1" placeholder="Nombre del Título">
                         </div>
-                        <div *ngSwitchCase="2">
+                        <div *ngSwitchCase="'exp'">
                             <label for="exampleFormControlInput1" class="form-label">Cargo ocupado</label>
                             <input class="form-control" id="exampleFormControlInput1" placeholder="Nombre del Cargo">
                         </div>

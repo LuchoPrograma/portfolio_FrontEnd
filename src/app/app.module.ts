@@ -12,6 +12,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LoginComponent } from './components/login/login.component';
 import { AboutEditComponent } from './components/forms/about-edit/about-edit.component';
 import { EduExpAddComponent } from './components/forms/edu-exp-add/edu-exp-add.component';
+import { ButtonsComponent } from './components/buttons/buttons.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { EduExpAddComponent } from './components/forms/edu-exp-add/edu-exp-add.c
     ProjectsComponent,
     LoginComponent,
     AboutEditComponent,
-    EduExpAddComponent
+    EduExpAddComponent,
+    ButtonsComponent
 
   ],
   imports: [

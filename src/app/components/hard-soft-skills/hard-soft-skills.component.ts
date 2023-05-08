@@ -1,5 +1,4 @@
 import { Component,OnInit } from '@angular/core';
-import { faAdd,faPen,faTrash } from '@fortawesome/free-solid-svg-icons';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 
 @Component({
@@ -7,12 +6,8 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
   templateUrl: './hard-soft-skills.component.html',
   styleUrls: ['./hard-soft-skills.component.css']
 })
-export class HardSoftSkillsComponent {
+export class HardSoftSkillsComponent implements OnInit{
   skills:any;
-
-  faPen = faPen;
-  faAdd = faAdd;
-  faTrash = faTrash;
 
   constructor(private portfolioData:PortfolioService){
   }

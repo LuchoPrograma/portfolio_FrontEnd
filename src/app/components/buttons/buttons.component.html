@@ -1,0 +1,5 @@
+<div [ngSwitch]="typeButton" class="rounded-circle btn btn-primary" (click)="onClick()">
+    <fa-icon *ngSwitchCase="'delete'" [icon]="faTrash" type="button"> </fa-icon>
+    <fa-icon *ngSwitchCase="'add'" [icon]="faAdd" type="button"></fa-icon>
+    <fa-icon *ngSwitchCase="'edit'" [icon]="faPen" type="button"></fa-icon>
+</div>

@@ -4,16 +4,16 @@
     <div class="col">
       <h2 class="card-title"> Educación </h2>
     </div>
-    <fa-icon class="col p-2 rounded-circle btn btn-primary" [icon]="faAdd"
-      data-bs-toggle="modal" data-bs-target="#staticBackdrop"
-    ></fa-icon>
+    <app-buttons typeButton="add" class="col d-flex justify-content-end"
+      data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    </app-buttons>
   </div>
 
   <app-edu-exp-add 
     class="modal fade" id="staticBackdrop" data-bs-backdrop="static" 
     data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" 
     aria-hidden="true"
-    esEduc="1"
+    esEduc="edu"
   ></app-edu-exp-add>
 
   <div class="mb-3" *ngFor="let edu of education">
@@ -35,10 +35,10 @@
 
             <div class="col">
               <div class="row" >
-                <fa-icon class="col p-2 rounded-circle btn btn-primary"  style="color: white;"
-                  [icon]="faPen" (click)="onEdit(edu)"></fa-icon>
-                <fa-icon class="col p-2 rounded-circle btn btn-primary" style="color: white;"
-                  [icon]="faTrash" (click)="onDeleteEducation(edu)"></fa-icon>
+                <div class="col">
+                  <app-buttons typeButton="edit" (btnClick)="onEdit(edu)"></app-buttons>
+                  <app-buttons typeButton="delete" (btnClick)="onDeleteEducation(edu)"></app-buttons>
+                </div>
               </div>
             </div>
 
@@ -57,10 +57,9 @@
     <div class="col">
       <h2 class="card-title"> Experiencia </h2>
     </div>
-    <fa-icon class="col p-2 rounded-circle btn btn-primary" style="color: white;"
-      data-bs-toggle="modal" data-bs-target="#staticBackdrop2"
-      [icon]="faAdd">
-    </fa-icon>
+    <app-buttons typeButton="add" class="col d-flex justify-content-end"
+      data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
+    </app-buttons>
   </div>
 
   <!-- Interfaz agregar educacion-->
@@ -68,7 +67,7 @@
     class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" 
     data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" 
     aria-hidden="true"
-    esEduc="2"
+    esEduc="exp"
   ></app-edu-exp-add>
 
   <div class="mb-3" *ngFor="let exp of experience">
@@ -89,10 +88,10 @@
             </div>
             <div class="col text-start">
               <div class="row" >
-                <fa-icon class="col p-2 rounded-circle btn btn-primary"  style="color: white;"
-                  [icon]="faPen" (click)="onEdit(exp)"></fa-icon>
-                <fa-icon class="col p-2 rounded-circle btn btn-primary" style="color: white;"
-                  [icon]="faTrash" (click)="onDeleteExperience(exp)"></fa-icon>
+                <div class="col">
+                  <app-buttons typeButton="edit" (btnClick)="onEdit(exp)"></app-buttons>
+                  <app-buttons typeButton="delete" (btnClick)="onDeleteExperience(exp)"></app-buttons>
+                </div>
               </div>
             </div>
           </div>

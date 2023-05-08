@@ -1,5 +1,4 @@
 import { Component,OnInit } from '@angular/core';
-import { faPen, faAdd, faTrash} from '@fortawesome/free-solid-svg-icons';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 
 @Component({
@@ -7,14 +6,9 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
   templateUrl: './education-and-experience.component.html',
   styleUrls: ['./education-and-experience.component.css']
 })
-export class EducationAndExperienceComponent {
+export class EducationAndExperienceComponent implements OnInit {
   education:any;
   experience:any;
-  showAddExp:boolean = false;
-
-  faPen = faPen;
-  faAdd = faAdd;
-  faTrash = faTrash;
 
   constructor(private portfolioData:PortfolioService ){
   }

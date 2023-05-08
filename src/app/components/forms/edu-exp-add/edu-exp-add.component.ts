@@ -8,6 +8,5 @@ import { Component,Input } from '@angular/core';
 export class EduExpAddComponent {
 
   @Input() esEduc : string ="";
-  //Valor "1" muestra interfaz de educación. "2" para experiencia laboral.
 
 }

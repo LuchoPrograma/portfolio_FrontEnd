@@ -10,9 +10,8 @@
       <h4 class="card-title mb-4">{{aboutData.titulo}}</h4>
       <p class="card-text">{{aboutData.acercaDe}}</p>
     </div>
-    <fa-icon type="button" class="col p-2 rounded-circle btn btn-primary" [icon]="fapen"
-    data-bs-toggle="modal" data-bs-target="#exampleModal"
-    ></fa-icon>
+    <app-buttons typeButton="edit" class="col-1 d-flex justify-content-end"
+      data-bs-toggle="modal" data-bs-target="#exampleModal"></app-buttons>
   </div>
 </div>
 
