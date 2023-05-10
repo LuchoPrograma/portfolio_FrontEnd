@@ -12,6 +12,7 @@
          "urlLogo": "./assets/inti.png",
          "institucion": "Instituro Nacional de Tecnología Educativa (INTI)",
          "cargo": "Profesor Sincronico YoProgramo 2",
+         "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vehicula quis velit ut scelerisque. Proin pulvinar ligula id finibus facilisis. Etiam lobortis ullamcorper magna, ut tempus sapien volutpat ac. Ut ornare viverra diam sit amet eleifend. Fusce quis nulla vel ligula mollis sagittis et eu justo.",
          "fechaDesde": "2022-02-01",
          "fechaHasta": "2022-09-31"
       },
@@ -20,6 +21,7 @@
          "urlLogo": "./assets/inti.png",
          "institucion": "Instituro Nacional de Tecnología Educativa (INTI)",
          "cargo": "Profesor Sincronico YoProgramo 4",
+         "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vehicula quis velit ut scelerisque. Proin pulvinar ligula id finibus facilisis. Etiam lobortis ullamcorper magna, ut tempus sapien volutpat ac. Ut ornare viverra diam sit amet eleifend. Fusce quis nulla vel ligula mollis sagittis et eu justo.",
          "fechaDesde": "2022-10-01",
          "fechaHasta": "Actualidad"
       }
@@ -30,6 +32,7 @@
          "urlLogo": "./assets/imágenes/uncuyo.jpg",
          "institucion": "Universidad Nacional de Cuyo (UNCuyo) ",
          "titulo": "Tecnicatura en Desarrollo de Software",
+         "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vehicula quis velit ut scelerisque. Proin pulvinar ligula id finibus facilisis. Etiam lobortis ullamcorper magna, ut tempus sapien volutpat ac. Ut ornare viverra diam sit amet eleifend. Fusce quis nulla vel ligula mollis sagittis et eu justo.",
          "fecha": "En curso"
       },
       {
@@ -37,6 +40,7 @@
          "urlLogo": "./assets/imágenes/arg-programa.png",
          "institucion": "Argentina Programa",
          "titulo": "Desarrollador Web Full-Stack",
+         "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vehicula quis velit ut scelerisque. Proin pulvinar ligula id finibus facilisis. Etiam lobortis ullamcorper magna, ut tempus sapien volutpat ac. Ut ornare viverra diam sit amet eleifend. Fusce quis nulla vel ligula mollis sagittis et eu justo.",
          "fecha": "En curso"
       },
       {
@@ -44,6 +48,7 @@
          "urlLogo": "./assets/imágenes/cuc.jpg",
          "institucion": "Colegio Universitario Central",
          "titulo": "Bachiller en Artes Plásticas",
+         "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vehicula quis velit ut scelerisque. Proin pulvinar ligula id finibus facilisis. Etiam lobortis ullamcorper magna, ut tempus sapien volutpat ac. Ut ornare viverra diam sit amet eleifend. Fusce quis nulla vel ligula mollis sagittis et eu justo.",
          "fecha": "2017"
       }
    ],

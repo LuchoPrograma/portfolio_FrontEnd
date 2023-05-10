@@ -1,12 +1,12 @@
-import { Component,Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-edu-exp-add',
-  templateUrl: './edu-exp-add.component.html',
-  styleUrls: ['./edu-exp-add.component.css']
+  selector: 'app-edu-exp-edit',
+  templateUrl: './edu-exp-edit.component.html',
+  styleUrls: ['./edu-exp-edit.component.css']
 })
-export class EduExpAddComponent {
-
+export class EduExpEditComponent {
+  
   @Input() esEduc : string ="";
 
   @Input() nombre:string =""
@@ -14,5 +14,6 @@ export class EduExpAddComponent {
   @Input() fechaDesde:string =""
   @Input() fechaHasta:string =""
   @Input() descripcion:string =""
+
 
 }

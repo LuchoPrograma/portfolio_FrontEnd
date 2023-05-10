@@ -13,6 +13,13 @@ import { LoginComponent } from './components/login/login.component';
 import { AboutEditComponent } from './components/forms/about-edit/about-edit.component';
 import { EduExpAddComponent } from './components/forms/edu-exp-add/edu-exp-add.component';
 import { ButtonsComponent } from './components/buttons/buttons.component';
+import { SkillsAddComponent } from './components/forms/skills-add/skills-add.component';
+import { SkillsEditComponent } from './components/forms/skills-edit/skills-edit.component';
+import { EduExpEditComponent } from './components/forms/edu-exp-edit/edu-exp-edit.component';
+import { ProjectsAddComponent } from './components/forms/projects-add/projects-add.component';
+import { ProjectsEditComponent } from './components/forms/projects-edit/projects-edit.component';
+;
+
 
 
 @NgModule({
@@ -26,7 +33,12 @@ import { ButtonsComponent } from './components/buttons/buttons.component';
     LoginComponent,
     AboutEditComponent,
     EduExpAddComponent,
-    ButtonsComponent
+    ButtonsComponent,
+    SkillsAddComponent,
+    SkillsEditComponent,
+    EduExpEditComponent,
+    ProjectsAddComponent,
+    ProjectsEditComponent,
 
   ],
   imports: [

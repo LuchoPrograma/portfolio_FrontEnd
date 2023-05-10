@@ -8,6 +8,7 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 })
 export class HardSoftSkillsComponent implements OnInit{
   skills:any;
+  editingSkill:any=[]
 
   constructor(private portfolioData:PortfolioService){
   }
@@ -20,6 +21,10 @@ export class HardSoftSkillsComponent implements OnInit{
 
   onDeleteSkill(item:any){
     this.portfolioData.deleteSkill(item).subscribe(() => (this.skills = this.skills.filter((t: { id: any; }) => t.id !== item.id) ))
+  }
+
+  getSingleSkill(skill:any){
+    this.editingSkill = skill;
   }
 
 }

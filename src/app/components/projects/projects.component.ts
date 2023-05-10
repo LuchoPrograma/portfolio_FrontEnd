@@ -8,6 +8,7 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 })
 export class ProjectsComponent implements OnInit{
   projects:any;
+  editingProject:any=[];
 
   constructor(private portfolioData:PortfolioService){}
 
@@ -15,6 +16,10 @@ export class ProjectsComponent implements OnInit{
     this.portfolioData.getProjects().subscribe(data => {
       this.projects = data;
     })
+  }
+
+  onEdit(project:any){
+    this.editingProject = project;
   }
 
   onDeleteProject(item:any){

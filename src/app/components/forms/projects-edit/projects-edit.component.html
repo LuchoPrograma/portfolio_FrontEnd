@@ -1,0 +1,37 @@
+<div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="editProjectModalLabel">Agregar nuevo Proyecto</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+            <form action="">
+                <div class="mb-3">
+                    <label class="form-label">Nombre del proyecto</label>
+                    <input class="form-control" type="text" [value]="projectName">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Descripción</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                        placeholder="Breve descripción del Proyecto">{{projectDescription}}</textarea>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Dirección URL</label>
+                    <input class="form-control" type="text" [value]="projectURL">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Fecha</label>
+                    <input class="form-control" type="text" [value]="projectDate">
+                </div>
+            </form>
+
+        
+            
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-primary">Agregar Proyecto</button>
+        </div>
+    </div>
+</div>

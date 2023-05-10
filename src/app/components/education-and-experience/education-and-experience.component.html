@@ -4,17 +4,13 @@
     <div class="col">
       <h2 class="card-title"> Educación </h2>
     </div>
-    <app-buttons typeButton="add" class="col d-flex justify-content-end"
-      data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    <app-buttons typeButton="add" class="col d-flex justify-content-end" data-bs-toggle="modal"
+      data-bs-target="#staticBackdrop">
     </app-buttons>
   </div>
 
-  <app-edu-exp-add 
-    class="modal fade" id="staticBackdrop" data-bs-backdrop="static" 
-    data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" 
-    aria-hidden="true"
-    esEduc="edu"
-  ></app-edu-exp-add>
+  <app-edu-exp-add class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" esEduc="edu"></app-edu-exp-add>
 
   <div class="mb-3" *ngFor="let edu of education">
     <div class="card-body mx-5 mb-3">
@@ -34,10 +30,20 @@
             </div>
 
             <div class="col">
-              <div class="row" >
+              <div class="row">
                 <div class="col">
-                  <app-buttons typeButton="edit" (btnClick)="onEdit(edu)"></app-buttons>
+                  <app-buttons typeButton="edit" data-bs-target="#eduEditModal" data-bs-toggle="modal"
+                    (btnClick)="onEdit(edu)"></app-buttons>
                   <app-buttons typeButton="delete" (btnClick)="onDeleteEducation(edu)"></app-buttons>
+
+                  <app-edu-exp-edit class="modal fade" id="eduEditModal" data-bs-backdrop="static"
+                    data-bs-keyboard="false" tabindex="-1" aria-labelledby="eduEditModalLabel" aria-hidden="true"
+                    esEduc="edu"
+                    nombre={{editingItem.titulo}} 
+                    institucion={{editingItem.institucion}} 
+                    fechaDesde={{editingItem.fecha}} 
+                    fechaHasta={{editingItem.fecha}}
+                    descripcion={{editingItem.descripcion}}></app-edu-exp-edit>
                 </div>
               </div>
             </div>
@@ -57,18 +63,14 @@
     <div class="col">
       <h2 class="card-title"> Experiencia </h2>
     </div>
-    <app-buttons typeButton="add" class="col d-flex justify-content-end"
-      data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
+    <app-buttons typeButton="add" class="col d-flex justify-content-end" data-bs-toggle="modal"
+      data-bs-target="#staticBackdrop2">
     </app-buttons>
   </div>
 
   <!-- Interfaz agregar educacion-->
-  <app-edu-exp-add 
-    class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" 
-    data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" 
-    aria-hidden="true"
-    esEduc="exp"
-  ></app-edu-exp-add>
+  <app-edu-exp-add class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false"
+    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" esEduc="exp"></app-edu-exp-add>
 
   <div class="mb-3" *ngFor="let exp of experience">
     <div class="card-body mx-5 mb-3">
@@ -83,14 +85,26 @@
             <div class="col">
               <h4 class="card-title ">{{exp.cargo}}</h4>
               <h5 class="card-text">{{exp.institucion}}</h5>
-              <h6 class="card-text">{{exp.fechaDesde}} / {{exp.fechaHasta}}</h6>   
-              <p class="card-text">{{exp.descripcion}}</p>     
+              <h6 class="card-text">{{exp.fechaDesde}} / {{exp.fechaHasta}}</h6>
+              <p class="card-text">{{exp.descripcion}}</p>
             </div>
             <div class="col text-start">
-              <div class="row" >
+              <div class="row">
                 <div class="col">
-                  <app-buttons typeButton="edit" (btnClick)="onEdit(exp)"></app-buttons>
+                  <app-buttons typeButton="edit" (btnClick)="onEdit(exp)"
+                    data-bs-toggle="modal"
+                    data-bs-target="#expEditModal"
+                  ></app-buttons>
                   <app-buttons typeButton="delete" (btnClick)="onDeleteExperience(exp)"></app-buttons>
+
+                  <app-edu-exp-edit class="modal fade" id="expEditModal" data-bs-backdrop="static"
+                  data-bs-keyboard="false" tabindex="-1" aria-labelledby="expEditModalLabel" aria-hidden="true"
+                  esEduc="edu"
+                  nombre={{editingItem.cargo}} 
+                  institucion={{editingItem.institucion}} 
+                  fechaDesde={{editingItem.fechaDesde}} 
+                  fechaHasta={{editingItem.fechaHasta}}
+                  descripcion={{editingItem.descripcion}}></app-edu-exp-edit>
                 </div>
               </div>
             </div>

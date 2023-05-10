@@ -3,17 +3,32 @@
     <div class="col">
       <h2 class="card-title"> Hard & Soft Skills </h2>
     </div>
-    <app-buttons class="col d-flex justify-content-end" typeButton="add"></app-buttons>
+    <app-buttons class="col d-flex justify-content-end" typeButton="add" data-bs-toggle="modal"
+      data-bs-target="#skillsModal"></app-buttons>
   </div>
 
+  <app-skills-add class="modal fade" id="skillsModal" data-bs-backdrop="static" tabindex="-1"
+    aria-labelledby="skillsModalLabel" aria-hidden="true"> </app-skills-add>
 
-  <div *ngFor="let skill of skills">
+
+  <div *ngFor="let skill of skills; let i = index">
     <div class="card-body mb-5 mx-5">
       <div class="row">
-        <h5 class="col display-6">{{skill.habilidad}}<small class="text-muted fst-italic"> ~ With faded secondary text</small> </h5>
+        <h5 class="col display-6 mx-2">{{skill.habilidad}} </h5>
         <div class="col d-flex justify-content-end">
-          <app-buttons typeButton="edit"></app-buttons>
+          <app-buttons typeButton="edit"
+            data-bs-toggle="modal"
+            data-bs-target="#skillsEditModal"
+            (btnClick)="getSingleSkill(skill)"
+          ></app-buttons>
           <app-buttons typeButton="delete" (btnClick)="onDeleteSkill(skill)"></app-buttons>
+        
+          <app-skills-edit class="modal fade" id="skillsEditModal" data-bs-backdrop="static" tabindex="-1"
+            aria-labelledby="skillsEditModalLabel" aria-hidden="true"
+            skillName={{editingSkill.habilidad}}
+            porcentaje={{editingSkill.porcentaje}}
+          ></app-skills-edit>
+
         </div>
       </div>
 

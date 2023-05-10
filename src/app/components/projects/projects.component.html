@@ -3,7 +3,15 @@
     <div class="col">
       <h2 class="card-title"> Proyectos </h2>
     </div>
-    <app-buttons typeButton="add" class="col d-flex justify-content-end"></app-buttons>
+    <app-buttons typeButton="add" class="col d-flex justify-content-end"
+      data-bs-toggle="modal"
+      data-bs-target="#addProjectModal"
+    ></app-buttons>
+
+    <app-projects-add class="modal fade" id="addProjectModal" data-bs-backdrop="static"
+    data-bs-keyboard="false" tabindex="-1" aria-labelledby="addProjectModalLabel" aria-hidden="true"
+    ></app-projects-add>
+
   </div>
 
   <div *ngFor="let proyectos of projects">
@@ -17,11 +25,23 @@
             <a href={{proyectos.urlProyecto}} class="btn btn-primary">Ir al Proyecto</a>
           </div>
           <div class="col-1 d-flex justify-content-end">
-            <app-buttons typeButton="edit"></app-buttons>
+            <app-buttons typeButton="edit" 
+              data-bs-toggle="modal"
+              data-bs-target="#editProjectModal"
+              (btnClick)="onEdit(proyectos)"></app-buttons>
             <app-buttons typeButton="delete" (btnClick)="onDeleteProject(proyectos)">
             </app-buttons>
-          </div>
 
+            <app-projects-edit class="modal fade" id="editProjectModal" data-bs-backdrop="static"
+            data-bs-keyboard="false" tabindex="-1" aria-labelledby="editProjectModalLabel" aria-hidden="true"
+            projectName={{editingProject.nombre}}
+            projectDescription={{editingProject.descripcion}}
+            projectDate={{editingProject.fecha}}
+            projectURL={{editingProject.urlProyecto}}
+            > </app-projects-edit>
+            
+
+          </div>
         </div>
 
       </div>

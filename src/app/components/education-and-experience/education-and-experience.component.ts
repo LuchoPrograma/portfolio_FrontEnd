@@ -9,6 +9,7 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 export class EducationAndExperienceComponent implements OnInit {
   education:any;
   experience:any;
+  editingItem:any=[]
 
   constructor(private portfolioData:PortfolioService ){
   }
@@ -34,7 +35,9 @@ export class EducationAndExperienceComponent implements OnInit {
   }
 
   onEdit(item:any){
-    console.log("A editar!")
+   
+    this.editingItem = item;
+
   }
 
   onAddEducation(education:any){
