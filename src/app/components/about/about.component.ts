@@ -1,4 +1,5 @@
 import { Component,OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { PortfolioService } from 'src/app/services/portfolio.service';
 
@@ -11,7 +12,7 @@ export class AboutComponent implements OnInit{
 
   aboutData:any;
 
-  constructor(private datosPortfolio:PortfolioService){
+  constructor(private datosPortfolio:PortfolioService,private router:Router){
   }
   ngOnInit():void{
     
@@ -20,4 +21,13 @@ export class AboutComponent implements OnInit{
     });
     
   }
+
+  editAbout(about:any){
+    this.datosPortfolio.editAbout(about).subscribe();
+  }
+
+  hasRoute(route:any){
+    return this.router.url === route
+  }
+
 }

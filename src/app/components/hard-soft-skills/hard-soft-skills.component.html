@@ -4,7 +4,9 @@
       <h2 class="card-title"> Hard & Soft Skills </h2>
     </div>
     <app-buttons class="col d-flex justify-content-end" typeButton="add" data-bs-toggle="modal"
-      data-bs-target="#skillsModal"></app-buttons>
+      data-bs-target="#skillsModal"
+      *ngIf="hasRoute('/edicion')"  
+    ></app-buttons>
   </div>
 
   <app-skills-add class="modal fade" id="skillsModal" data-bs-backdrop="static" tabindex="-1"
@@ -20,8 +22,11 @@
             data-bs-toggle="modal"
             data-bs-target="#skillsEditModal"
             (btnClick)="getSingleSkill(skill)"
+            *ngIf="hasRoute('/edicion')" 
           ></app-buttons>
-          <app-buttons typeButton="delete" (btnClick)="onDeleteSkill(skill)"></app-buttons>
+          <app-buttons typeButton="delete" (btnClick)="onDeleteSkill(skill)"
+            *ngIf="hasRoute('/edicion')" 
+          ></app-buttons>
         
           <app-skills-edit class="modal fade" id="skillsEditModal" data-bs-backdrop="static" tabindex="-1"
             aria-labelledby="skillsEditModalLabel" aria-hidden="true"

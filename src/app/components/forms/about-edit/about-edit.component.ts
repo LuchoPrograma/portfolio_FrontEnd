@@ -1,5 +1,4 @@
-import { Component,Input } from '@angular/core';
-
+import { Component,EventEmitter,Input, Output } from '@angular/core';
 
 
 @Component({
@@ -8,10 +7,19 @@ import { Component,Input } from '@angular/core';
   styleUrls: ['./about-edit.component.css']
 })
 export class AboutEditComponent {
+  @Output() onEditAbout = new EventEmitter;
+
   @Input() nombre:string = "";
   @Input() apellido:string = ""; 
   @Input() titulo:string = ""; 
-  @Input() descripcion:string = "";  
+  @Input() acercaDe:string = "";  
+  @Input() urlFoto:string = "";
 
-  
+  onEdit():void{
+    
+    const {nombre, apellido, titulo, acercaDe, urlFoto} = this;
+    const editAbout = {nombre, apellido, titulo, acercaDe, urlFoto};
+ 
+    this.onEditAbout.emit(editAbout);
+  }
 }

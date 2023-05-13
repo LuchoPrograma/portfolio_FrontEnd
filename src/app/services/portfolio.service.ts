@@ -1,6 +1,10 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+
+const httpOptions = {
+  headers: new HttpHeaders({'Content-Type':'application/json'}) //avisamos que mandamos el contenido en formato json
+}
 
 @Injectable({
   providedIn: 'root'
@@ -27,6 +31,9 @@ export class PortfolioService {
     return this.http.get(this.apiUrl + "/proyectos")
   }
 
+  addEducation(item:any):Observable<any>{
+    return this.http.post(this.apiUrl + "/educacion/", item)
+  }
 
   deleteEducation(item:any):Observable<any>{
     return this.http.delete(this.apiUrl + "/educacion/" + item.id)
@@ -39,6 +46,11 @@ export class PortfolioService {
   }
   deleteProject(item:any):Observable<any>{
     return this.http.delete(this.apiUrl + "/proyectos/" + item.id)
+  }
+
+  
+  editAbout(item:any):Observable<any>{
+    return this.http.put(this.apiUrl + "/persona", item, httpOptions)
   }
 
 }

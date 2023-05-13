@@ -1,1 +1,42 @@
-<p>login works!</p>
+<div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Iniciar Sesión</h5>
+    <h6 class="offcanvas-title" id="offcanvasWithBothOptionsLabel"> Acceder al modo edición</h6>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit($event)">
+      <div class="mb-3">
+        <label for="usernameInput" class="form-label">Usuario</label>
+        <input type="text" formControlName="username" class="form-control" id="usernameInput" 
+        [ngClass]="{
+            'is-invalid': Username?.errors && Username?.touched,
+            'is-valid': !Username?.errors && Username?.touched}">
+        <div *ngIf="Username?.errors && Username?.touched">
+            <p *ngIf="Username?.hasError('required')" class="text-danger">
+                El nombre de Usuario es requerido.
+            </p>
+            <p *ngIf="Username?.hasError('minlength')" class="text-danger">
+                El nombre de usuario debebe ser de al menos 5 caracteres.
+            </p>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+        <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1"
+        [ngClass]="{
+            'is-invalid': Password?.errors && Password?.touched,
+            'is-valid': !Password?.errors && Password?.touched}">
+        <div *ngIf="Password?.errors && Password?.touched">
+            <p *ngIf="Password?.hasError('required')" class="text-danger">
+                La contraseña es requerida.
+            </p>
+            <p *ngIf="Password?.hasError('minlength')" class="text-danger">
+                La contraseña debebe ser de al menos 8 caracteres.
+            </p>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Ingresar</button>
+    </form>
+
+  </div>

@@ -1,4 +1,5 @@
 import { Component,OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class HardSoftSkillsComponent implements OnInit{
   skills:any;
   editingSkill:any=[]
 
-  constructor(private portfolioData:PortfolioService){
+  constructor(private portfolioData:PortfolioService, private router:Router){
   }
 
   ngOnInit():void{
@@ -25,6 +26,10 @@ export class HardSoftSkillsComponent implements OnInit{
 
   getSingleSkill(skill:any){
     this.editingSkill = skill;
+  }
+
+  hasRoute(route:any){
+    return this.router.url === route
   }
 
 }

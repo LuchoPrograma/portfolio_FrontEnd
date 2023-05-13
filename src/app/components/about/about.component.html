@@ -6,19 +6,21 @@
     </div>
 
     <div class="col">
-      <h1 class="card-title mb-4">{{aboutData.nombre + " " + aboutData.apellido}}</h1>
-      <h4 class="card-title mb-4">{{aboutData.titulo}}</h4>
-      <p class="card-text">{{aboutData.acercaDe}}</p>
+      <h1 class="card-title mb-2">{{aboutData.nombre + " " + aboutData.apellido}}</h1>
+      <h4 class="card-title mb-3">{{aboutData.titulo}}</h4>
+      <p class="card-text mb-4">{{aboutData.acercaDe}}</p>
     </div>
     <app-buttons typeButton="edit" class="col-1 d-flex justify-content-end"
-      data-bs-toggle="modal" data-bs-target="#exampleModal"></app-buttons>
+      data-bs-toggle="modal" data-bs-target="#exampleModal"
+      *ngIf="hasRoute('/edicion')"></app-buttons>
   </div>
 </div>
 
 <app-about-edit class="modal fade" id="exampleModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
-    nombre="{{aboutData.nombre}}"
-    apellido="{{aboutData.apellido}}"
-    titulo="{{aboutData.titulo}}"
-    descripcion="{{aboutData.acercaDe}}"
-
-  > </app-about-edit> 
+  nombre="{{aboutData.nombre}}"
+  apellido="{{aboutData.apellido}}"
+  titulo="{{aboutData.titulo}}"
+  acercaDe="{{aboutData.acercaDe}}"
+  urlFoto="{{aboutData.urlFoto}}"
+  (onEditAbout)="editAbout($event)"
+> </app-about-edit> 

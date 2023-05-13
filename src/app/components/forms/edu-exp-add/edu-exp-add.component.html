@@ -4,47 +4,44 @@
         <div class="modal-header">
 
             <div [ngSwitch]="esEduc">
-                <h1 *ngSwitchCase="'edu'" class="modal-title fs-5" id="staticBackdropLabel"> Agregar nueva Educación
+                <h1 *ngSwitchCase='true' class="modal-title fs-5" id="staticBackdropLabel"> Agregar nueva Educación
                 </h1>
-                <h1 *ngSwitchCase="'exp'" class="modal-title fs-5" id="staticBackdropLabel"> Agregar nueva Experiencia
+                <h1 *ngSwitchCase='false' class="modal-title fs-5" id="staticBackdropLabel"> Agregar nueva Experiencia
                     Laboral</h1>
             </div>
 
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
 
-            <form>
+        <form (ngSubmit)="onAdd()">
+            <div class="modal-body">
+
                 <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Institución</label>
-                    <input class="form-control" id="exampleFormControlInput1" placeholder="Nombre de la Institución">
+                    <label for="institucion" class="form-label">Institución</label>
+                    <input class="form-control" name="institucion" id="institucion" placeholder="Nombre de la Institución" [(ngModel)]="institucion">
                 </div>
 
                 <div class="mb-3">
-                    <div [ngSwitch]="esEduc">
-                        <div *ngSwitchCase="'edu'">
-                            <label for="exampleFormControlInput1" class="form-label">Título obtenido / a obtener</label>
-                            <input class="form-control" id="exampleFormControlInput1" placeholder="Nombre del Título">
-                        </div>
-                        <div *ngSwitchCase="'exp'">
-                            <label for="exampleFormControlInput1" class="form-label">Cargo ocupado</label>
-                            <input class="form-control" id="exampleFormControlInput1" placeholder="Nombre del Cargo">
+                    <div>
+                        <div>
+                            <label for="cargo" class="form-label">{{esEduc? 'Nombre del Título' : 'Cargo ocupado' }}</label>
+                            <input class="form-control" id="cargo" name="cargo" [placeholder]="esEduc? 'Nombre del Título' : 'Nombre del Cargo'" [(ngModel)]="nombre">
                         </div>
                     </div>
 
                 </div>
 
                 <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Descripción</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                        placeholder="Breve descripción"></textarea>
+                    <label for="descripcion" class="form-label">Descripción</label>
+                    <textarea class="form-control" name="descripcion" id="descripcion" rows="3"
+                        placeholder="Breve descripción" [(ngModel)] = "descripcion"></textarea>
                 </div>
 
                 <div class="row mb-3">
                     <div class="col-md mb-3 mx-3 text-center">
-                        <label for="exampleFormControlInput1" class="form-label">Fecha de inicio</label>
+                        <label for="fechaDesde" class="form-label">Fecha de inicio</label>
                         <div class="row">
-                            <div class="col">
+                            <!-- <div class="col">
                                 <input class="form-control text-center" id="exampleFormControlInput1" placeholder="Día">
                             </div>
                             <div class="col">
@@ -52,14 +49,17 @@
                             </div>
                             <div class="col">
                                 <input class="form-control text-center" id="exampleFormControlInput1" placeholder="Año">
+                            </div> -->
+                            <div class="col">
+                                <input class="form-control text-center" name="fechaDesde" id="fechaDesde" placeholder="Fecha" [(ngModel)]="fechaDesde">
                             </div>
                         </div>
                     </div>
 
                     <div class="col-md mb-3 mx-3 text-center">
-                        <label for="exampleFormControlInput1" class="form-label">Fecha de finalización</label>
+                        <label for="fechaHasta" class="form-label">Fecha de finalización</label>
                         <div class="row">
-                            <div class="col">
+                            <!-- <div class="col">
                                 <input class="form-control text-center" id="exampleFormControlInput1" placeholder="Día">
                             </div>
                             <div class="col">
@@ -67,6 +67,9 @@
                             </div>
                             <div class="col">
                                 <input class="form-control text-center" id="exampleFormControlInput1" placeholder="Año">
+                            </div> -->
+                            <div class="col">
+                                <input class="form-control text-center" name="fechaHasta" id="fechaHasta" placeholder="Fecha" [(ngModel)]="fechaHasta">
                             </div>
                         </div>
                     </div>
@@ -77,16 +80,19 @@
                     <label class="input-group-text" for="inputGroupFile02">Logo de la Institución</label>
                     <input type="file" class="form-control" id="inputGroupFile02">
                 </div>
-            </form>
 
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-primary">Agregar</button>
-        </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Agregar</button>
+            </div>
+
+        </form>
+
     </div>
 
-   
+
 
 
 

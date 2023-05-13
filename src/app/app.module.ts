@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http'
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -18,8 +20,12 @@ import { SkillsEditComponent } from './components/forms/skills-edit/skills-edit.
 import { EduExpEditComponent } from './components/forms/edu-exp-edit/edu-exp-edit.component';
 import { ProjectsAddComponent } from './components/forms/projects-add/projects-add.component';
 import { ProjectsEditComponent } from './components/forms/projects-edit/projects-edit.component';
-;
 
+
+const routes: Routes = [
+  {path : '', component:AppComponent},
+  {path : 'edicion', component:AppComponent}
+];
 
 
 @NgModule({
@@ -44,7 +50,10 @@ import { ProjectsEditComponent } from './components/forms/projects-edit/projects
   imports: [
     BrowserModule,
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    RouterModule.forRoot(routes),
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

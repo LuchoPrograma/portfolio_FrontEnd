@@ -6,6 +6,7 @@
     <app-buttons typeButton="add" class="col d-flex justify-content-end"
       data-bs-toggle="modal"
       data-bs-target="#addProjectModal"
+      *ngIf="hasRoute('/edicion')" 
     ></app-buttons>
 
     <app-projects-add class="modal fade" id="addProjectModal" data-bs-backdrop="static"
@@ -28,8 +29,10 @@
             <app-buttons typeButton="edit" 
               data-bs-toggle="modal"
               data-bs-target="#editProjectModal"
-              (btnClick)="onEdit(proyectos)"></app-buttons>
-            <app-buttons typeButton="delete" (btnClick)="onDeleteProject(proyectos)">
+              (btnClick)="onEdit(proyectos)"
+              *ngIf="hasRoute('/edicion')" 
+            ></app-buttons>
+            <app-buttons typeButton="delete" (btnClick)="onDeleteProject(proyectos)" *ngIf="hasRoute('/edicion')" >
             </app-buttons>
 
             <app-projects-edit class="modal fade" id="editProjectModal" data-bs-backdrop="static"

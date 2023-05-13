@@ -1,4 +1,5 @@
 import { Component,OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 
 @Component({
@@ -9,19 +10,17 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 export class EducationAndExperienceComponent implements OnInit {
   education:any;
   experience:any;
-  editingItem:any=[]
+  editingItem:any=[];
 
-  constructor(private portfolioData:PortfolioService ){
+  constructor(private portfolioData:PortfolioService,private router:Router ){
   }
 
   ngOnInit():void{
     this.portfolioData.getEducation().subscribe(data =>{
       this.education = data;
-      //this.experience = data.experiencia;
     });
     this.portfolioData.getExperience().subscribe(data =>{
       this.experience = data;
-      //this.experience = data.experiencia;
     });
   }
 
@@ -41,11 +40,15 @@ export class EducationAndExperienceComponent implements OnInit {
   }
 
   onAddEducation(education:any){
-    console.log("Agregar!")
+    console.log(education)
   }
 
   onAddExperience(experience:any){
     console.log("Agregar!")
+  }
+
+  hasRoute(route:any){
+    return this.router.url === route
   }
   
 }

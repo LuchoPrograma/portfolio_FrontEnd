@@ -5,12 +5,15 @@
       <h2 class="card-title"> Educación </h2>
     </div>
     <app-buttons typeButton="add" class="col d-flex justify-content-end" data-bs-toggle="modal"
-      data-bs-target="#staticBackdrop">
-    </app-buttons>
+      data-bs-target="#staticBackdrop"
+      *ngIf="hasRoute('/edicion')"    
+    ></app-buttons>
   </div>
 
   <app-edu-exp-add class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
-    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" esEduc="edu"></app-edu-exp-add>
+    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" [esEduc]=true
+    (addEducation)="onAddEducation($event)"
+  ></app-edu-exp-add>
 
   <div class="mb-3" *ngFor="let edu of education">
     <div class="card-body mx-5 mb-3">
@@ -25,7 +28,7 @@
             <div class="col">
               <h4 class="card-title ">{{edu.institucion}}</h4>
               <h5 class="card-text">{{edu.titulo}}</h5>
-              <h6 class="card-text">{{edu.fecha}}</h6>
+              <h6 class="card-text">{{edu.fechaHasta}}</h6>
               <p class="card-text">{{edu.descripcion}}</p>
             </div>
 
@@ -33,16 +36,21 @@
               <div class="row">
                 <div class="col">
                   <app-buttons typeButton="edit" data-bs-target="#eduEditModal" data-bs-toggle="modal"
-                    (btnClick)="onEdit(edu)"></app-buttons>
-                  <app-buttons typeButton="delete" (btnClick)="onDeleteEducation(edu)"></app-buttons>
+                    (btnClick)="onEdit(edu)"
+                    *ngIf="hasRoute('/edicion')"
+                  ></app-buttons>
+                  <app-buttons typeButton="delete" 
+                    (btnClick)="onDeleteEducation(edu)"
+                    *ngIf="hasRoute('/edicion')"
+                  ></app-buttons>
 
                   <app-edu-exp-edit class="modal fade" id="eduEditModal" data-bs-backdrop="static"
                     data-bs-keyboard="false" tabindex="-1" aria-labelledby="eduEditModalLabel" aria-hidden="true"
                     esEduc="edu"
                     nombre={{editingItem.titulo}} 
                     institucion={{editingItem.institucion}} 
-                    fechaDesde={{editingItem.fecha}} 
-                    fechaHasta={{editingItem.fecha}}
+                    fechaDesde={{editingItem.fechaHasta}} 
+                    fechaHasta={{editingItem.fechaHasta}}
                     descripcion={{editingItem.descripcion}}></app-edu-exp-edit>
                 </div>
               </div>
@@ -64,13 +72,15 @@
       <h2 class="card-title"> Experiencia </h2>
     </div>
     <app-buttons typeButton="add" class="col d-flex justify-content-end" data-bs-toggle="modal"
-      data-bs-target="#staticBackdrop2">
-    </app-buttons>
+      data-bs-target="#staticBackdrop2"
+      *ngIf="hasRoute('/edicion')"
+    ></app-buttons>
   </div>
 
   <!-- Interfaz agregar educacion-->
   <app-edu-exp-add class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false"
-    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" esEduc="exp"></app-edu-exp-add>
+    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" [esEduc]=false
+  ></app-edu-exp-add>
 
   <div class="mb-3" *ngFor="let exp of experience">
     <div class="card-body mx-5 mb-3">
@@ -94,8 +104,11 @@
                   <app-buttons typeButton="edit" (btnClick)="onEdit(exp)"
                     data-bs-toggle="modal"
                     data-bs-target="#expEditModal"
+                    *ngIf="hasRoute('/edicion')"
                   ></app-buttons>
-                  <app-buttons typeButton="delete" (btnClick)="onDeleteExperience(exp)"></app-buttons>
+                  <app-buttons typeButton="delete" (btnClick)="onDeleteExperience(exp)"
+                    *ngIf="hasRoute('/edicion')"
+                  ></app-buttons>
 
                   <app-edu-exp-edit class="modal fade" id="expEditModal" data-bs-backdrop="static"
                   data-bs-keyboard="false" tabindex="-1" aria-labelledby="expEditModalLabel" aria-hidden="true"
