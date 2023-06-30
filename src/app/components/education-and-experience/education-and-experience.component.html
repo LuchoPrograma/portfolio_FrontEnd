@@ -28,7 +28,7 @@
             <div class="col">
               <h4 class="card-title ">{{edu.institucion}}</h4>
               <h5 class="card-text">{{edu.titulo}}</h5>
-              <h6 class="card-text">{{edu.fechaHasta}}</h6>
+              <h6 class="card-text">{{edu.fechaDesde + '  |  ' + edu.fechaHasta}}</h6>
               <p class="card-text">{{edu.descripcion}}</p>
             </div>
 
@@ -49,9 +49,12 @@
                     esEduc="edu"
                     nombre={{editingItem.titulo}} 
                     institucion={{editingItem.institucion}} 
-                    fechaDesde={{editingItem.fechaHasta}} 
+                    fechaDesde={{editingItem.fechaDesde}} 
                     fechaHasta={{editingItem.fechaHasta}}
-                    descripcion={{editingItem.descripcion}}></app-edu-exp-edit>
+                    descripcion={{editingItem.descripcion}}
+                    (editEducation)="onEditEducation($event)"
+                  ></app-edu-exp-edit>
+
                 </div>
               </div>
             </div>
@@ -77,9 +80,9 @@
     ></app-buttons>
   </div>
 
-  <!-- Interfaz agregar educacion-->
   <app-edu-exp-add class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false"
     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" [esEduc]=false
+    (addExperience)="onAddExperience($event)"
   ></app-edu-exp-add>
 
   <div class="mb-3" *ngFor="let exp of experience">
@@ -95,7 +98,7 @@
             <div class="col">
               <h4 class="card-title ">{{exp.cargo}}</h4>
               <h5 class="card-text">{{exp.institucion}}</h5>
-              <h6 class="card-text">{{exp.fechaDesde}} / {{exp.fechaHasta}}</h6>
+              <h6 class="card-text">{{exp.fechaDesde}} | {{exp.fechaHasta}}</h6>
               <p class="card-text">{{exp.descripcion}}</p>
             </div>
             <div class="col text-start">

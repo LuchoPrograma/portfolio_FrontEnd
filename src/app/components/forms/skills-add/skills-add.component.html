@@ -1,35 +1,27 @@
-
 <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
         <div class="modal-header">
             <h1 class="modal-title fs-5" id="modalEdicionLabel">Agregar nueva Habilidad</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
 
-            <form action="">
-                
+        <form (ngSubmit)="onAdd()">
+            <div class="modal-body">
                 <div>
                     <label class="form-label">Nombre de la Habilidad</label>
-                    <input type="text"  class="form-control">
+                    <input type="text" class="form-control" name="habilidad" [(ngModel)]="habilidad">
                 </div>
 
                 <div>
                     <label class="form-label"> Porcentaje de experiencia</label>
-                    <input type="text" class="form-control">
-                </div>    
+                    <input type="text" class="form-control"  name="porcentaje" [(ngModel)]="porcentaje">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Agregar Habilidad</button>
+            </div>
+        </form>
 
-            </form>
-
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-primary">Guardar cambios</button>
-        </div>
     </div>
 </div>
-
-
-
-
-

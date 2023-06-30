@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http'
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -20,6 +20,8 @@ import { SkillsEditComponent } from './components/forms/skills-edit/skills-edit.
 import { EduExpEditComponent } from './components/forms/edu-exp-edit/edu-exp-edit.component';
 import { ProjectsAddComponent } from './components/forms/projects-add/projects-add.component';
 import { ProjectsEditComponent } from './components/forms/projects-edit/projects-edit.component';
+import { InterceptorService } from './services/interceptor.service';
+import { PortfolioService } from './services/portfolio.service';
 
 
 const routes: Routes = [
@@ -55,7 +57,8 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [PortfolioService,
+    {provide: HTTP_INTERCEPTORS,useClass: InterceptorService, multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

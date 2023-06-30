@@ -17,13 +17,12 @@ export class EduExpAddComponent {
   @Input() fechaHasta:string =""
   @Input() descripcion:string =""
 
-  titulo:string ="HOLA"
+  titulo:string =""
   cargo:string =""
 
   onAdd(){
     if(this.esEduc){
-      console.log("agregando educacion")
-      console.log(this.nombre)
+
       this.titulo = this.nombre;
 
       const {titulo,institucion,descripcion,fechaDesde,fechaHasta } = this 
@@ -32,6 +31,7 @@ export class EduExpAddComponent {
       this.addEducation.emit(newEducation);
 
     }else{
+
       this.cargo = this.nombre;
 
       const {cargo,institucion,descripcion,fechaDesde,fechaHasta } = this 

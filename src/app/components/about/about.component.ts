@@ -11,14 +11,16 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 export class AboutComponent implements OnInit{
 
   aboutData:any;
+  
 
   constructor(private datosPortfolio:PortfolioService,private router:Router){
   }
   ngOnInit():void{
     
     this.datosPortfolio.getAbout().subscribe(data =>{
-      this.aboutData = data;
+      this.aboutData = data[0];
     });
+    
     
   }
 

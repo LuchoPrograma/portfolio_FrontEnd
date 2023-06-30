@@ -10,7 +10,9 @@
   </div>
 
   <app-skills-add class="modal fade" id="skillsModal" data-bs-backdrop="static" tabindex="-1"
-    aria-labelledby="skillsModalLabel" aria-hidden="true"> </app-skills-add>
+    aria-labelledby="skillsModalLabel" aria-hidden="true"
+    (addSkill)="onAddSkill($event)"  
+  > </app-skills-add>
 
 
   <div *ngFor="let skill of skills; let i = index">

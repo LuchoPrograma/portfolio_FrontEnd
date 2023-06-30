@@ -11,6 +11,7 @@ export class EducationAndExperienceComponent implements OnInit {
   education:any;
   experience:any;
   editingItem:any=[];
+  
 
   constructor(private portfolioData:PortfolioService,private router:Router ){
   }
@@ -24,6 +25,10 @@ export class EducationAndExperienceComponent implements OnInit {
     });
   }
 
+  onEdit(item:any){
+    this.editingItem = item;
+  }
+
   onDeleteEducation(item:any){
     console.log("Borrar!")
     this.portfolioData.deleteEducation(item).subscribe(() => (this.education = this.education.filter((t: { id: any; }) => t.id !== item.id) ))
@@ -33,18 +38,24 @@ export class EducationAndExperienceComponent implements OnInit {
     this.portfolioData.deleteExperience(item).subscribe(() => (this.experience = this.experience.filter((t: { id: any; }) => t.id !== item.id) ))
   }
 
-  onEdit(item:any){
-   
-    this.editingItem = item;
 
+  onAddEducation(item:any){
+    console.log(item)
+    this.portfolioData.addEducation(item).subscribe(item=>this.education.push(item))
+  }
+  onAddExperience(item:any){
+    console.log(item)
+    this.portfolioData.addExperience(item).subscribe(item=>this.experience.push(item))
   }
 
-  onAddEducation(education:any){
-    console.log(education)
-  }
 
-  onAddExperience(experience:any){
-    console.log("Agregar!")
+  onEditEducation(item:any){
+    console.log(item)
+    this.portfolioData.editEducation(item).subscribe();
+  }
+  onEditExperience(item:any){
+    console.log(item)
+    this.portfolioData.editExperience(item).subscribe();
   }
 
   hasRoute(route:any){

@@ -17,7 +17,7 @@
         </li>
         <li>
         <!--Boton de logeo-->
-          <button type="button" class="btn" [ngClass]="hasRoute('/edicion')?  'btn-success' : 'btn-outline-warning'" data-bs-toggle="offcanvas" 
+          <button type="button" class="btn" [ngClass]="hasRoute('/edicion')?  'btn-success' : 'btn-outline-warning'" [attr.data-bs-toggle]="hasRoute('/edicion')? '': 'offcanvas'" 
             data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"
             (click)="hasRoute('/edicion')? changeRoute():''"  
           >{{hasRoute('/edicion')? 'Terminar Edicion' : 'Iniciar Sesion' }}</button>

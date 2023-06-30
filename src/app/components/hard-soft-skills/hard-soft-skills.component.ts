@@ -24,6 +24,10 @@ export class HardSoftSkillsComponent implements OnInit{
     this.portfolioData.deleteSkill(item).subscribe(() => (this.skills = this.skills.filter((t: { id: any; }) => t.id !== item.id) ))
   }
 
+  onAddSkill(item:any){
+    this.portfolioData.addSkill(item).subscribe(item=>this.skills.push(item))
+  }
+
   getSingleSkill(skill:any){
     this.editingSkill = skill;
   }
