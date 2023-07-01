@@ -12,8 +12,8 @@ const httpOptions = {
 export class PortfolioService {
 
   apiUrl:string = "http://localhost:3000"; // <-- Utilizando JSON server (ejecutar en consola: json-server --watch db.json )
-  springUrl:string = "http://localhost:8080";
-  //springUrl:string = "https://backend-portfolio-vbe3.onrender.com"
+  //springUrl:string = "http://localhost:8080";
+  springUrl:string = "https://backend-portfolio-vbe3.onrender.com"
 
   constructor(private http:HttpClient) { }
 
@@ -42,21 +42,24 @@ export class PortfolioService {
   addSkill(item:any):Observable<any>{
     return this.http.post(this.springUrl + "/habilidad/add", item)
   }
+  addProject(item:any):Observable<any>{
+    return this.http.post(this.springUrl + "/proyecto/add", item)
+  }
 
   editAbout(item:any):Observable<any>{
-    return this.http.put(this.apiUrl + "/persona/", item, httpOptions)
+    return this.http.put(this.springUrl + "/persona/edit/" + item.id + "?nombre=" + item.nombre+"&apellido=" +item.apellido+ "&titulo=" + item.titulo + "&acercaDe=" + item.acercaDe + "&urlFoto=" + item.urlFoto, item, httpOptions)
   }
   editEducation(item:any):Observable<any>{
-    return this.http.put(this.apiUrl + "/educacion/" + item.id, item, httpOptions)
+    return this.http.put(this.springUrl + "/educacion/edit/" + item.id +"?titulo="+item.titulo+"&institucion=" +item.institucion+ "&descripcion=" + item.descripcion + "&fechaDesde=" + item.fechaDesde + "&fechaHasta=" + item.fechaHasta + "&urlLogo=" + item.urlLogo, item, httpOptions)
   }
   editExperience(item:any):Observable<any>{
-    return this.http.put(this.apiUrl + "/experiencia/" + item.id, item, httpOptions)
+    return this.http.put(this.springUrl + "/experiencia/edit/" + item.id +"?cargo="+item.titulo+"&institucion=" +item.institucion+ "&descripcion=" + item.descripcion + "&fechaDesde=" + item.fechaDesde + "&fechaHasta=" + item.fechaHasta + "&urlLogo=" + item.urlLogo, item, httpOptions)
   }
   editSkill(item:any):Observable<any>{
-    return this.http.put(this.apiUrl + "/habilidad/", item, httpOptions)
+    return this.http.put(this.springUrl + "/habilidad/edit/" + item.id, item, httpOptions)
   }
   editProject(item:any):Observable<any>{
-    return this.http.put(this.apiUrl + "/proyecto/", item, httpOptions)
+    return this.http.put(this.springUrl + "/proyecto/edit/" + item.id, item, httpOptions)
   }
 
   deleteEducation(item:any):Observable<any>{

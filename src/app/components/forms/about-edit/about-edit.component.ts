@@ -9,6 +9,7 @@ import { Component,EventEmitter,Input, Output } from '@angular/core';
 export class AboutEditComponent {
   @Output() onEditAbout = new EventEmitter;
 
+  @Input() id:string = "";
   @Input() nombre:string = "";
   @Input() apellido:string = ""; 
   @Input() titulo:string = ""; 
@@ -17,8 +18,8 @@ export class AboutEditComponent {
 
   onEdit():void{
     
-    const {nombre, apellido, titulo, acercaDe, urlFoto} = this;
-    const editAbout = {nombre, apellido, titulo, acercaDe, urlFoto};
+    const {id,nombre, apellido, titulo, acercaDe, urlFoto} = this;
+    const editAbout = {id,nombre, apellido, titulo, acercaDe, urlFoto};
  
     this.onEditAbout.emit(editAbout);
   }

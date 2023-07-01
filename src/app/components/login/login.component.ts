@@ -29,12 +29,12 @@ export class LoginComponent {
   onSubmit(event:Event){
     if (this.form.valid){
       event.preventDefault
+      console.log(this.form.value);
       this.authenticationService.login(this.form.value).subscribe(data=>{
         console.log("DATA:" + JSON.stringify(data));
         this.route.navigate(['/edicion']);
   
       })
-      alert("Todo salio bien ¡Enviar formuario!")
     }else{
       // Corremos todas las validaciones para que se ejecuten los mensajes de error en el template     
       this.form.markAllAsTouched(); 

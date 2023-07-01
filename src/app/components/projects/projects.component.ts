@@ -23,6 +23,10 @@ export class ProjectsComponent implements OnInit{
     this.editingProject = project;
   }
 
+  onAddProject(newProject:any){
+    this.portfolioData.addProject(newProject).subscribe(newProject=>this.projects.push(newProject));
+  }
+
   onDeleteProject(item:any){
     this.portfolioData.deleteProject(item).subscribe(() => (this.projects = this.projects.filter((t: { id: any; }) => t.id !== item.id) ))
   }

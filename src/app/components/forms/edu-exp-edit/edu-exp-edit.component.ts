@@ -11,6 +11,7 @@ export class EduExpEditComponent {
 
   @Input() esEduc : string ="";
 
+  @Input() id:string =""
   @Input() nombre:string =""
   @Input() institucion:string =""
   @Input() fechaDesde:string =""
@@ -25,8 +26,8 @@ export class EduExpEditComponent {
       
       this.titulo = this.nombre;
 
-      const {titulo,institucion,descripcion,fechaDesde,fechaHasta } = this 
-      const newEducation = {titulo,institucion,descripcion,fechaDesde,fechaHasta }
+      const {id,titulo,institucion,descripcion,fechaDesde,fechaHasta } = this 
+      const newEducation = {id,titulo,institucion,descripcion,fechaDesde,fechaHasta }
 
       console.log(newEducation)
       this.editEducation.emit(newEducation);
@@ -35,8 +36,8 @@ export class EduExpEditComponent {
 
       this.cargo = this.nombre;
 
-      const {cargo,institucion,descripcion,fechaDesde,fechaHasta } = this 
-      const newExperience = {cargo,institucion,descripcion,fechaDesde,fechaHasta }
+      const {id,cargo,institucion,descripcion,fechaDesde,fechaHasta } = this 
+      const newExperience = {id,cargo,institucion,descripcion,fechaDesde,fechaHasta }
 
       console.log(newExperience)
       this.editExperience.emit(newExperience);

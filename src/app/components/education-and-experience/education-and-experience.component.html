@@ -47,6 +47,7 @@
                   <app-edu-exp-edit class="modal fade" id="eduEditModal" data-bs-backdrop="static"
                     data-bs-keyboard="false" tabindex="-1" aria-labelledby="eduEditModalLabel" aria-hidden="true"
                     esEduc="edu"
+                    id={{editingItem.id}}
                     nombre={{editingItem.titulo}} 
                     institucion={{editingItem.institucion}} 
                     fechaDesde={{editingItem.fechaDesde}} 
@@ -115,12 +116,15 @@
 
                   <app-edu-exp-edit class="modal fade" id="expEditModal" data-bs-backdrop="static"
                   data-bs-keyboard="false" tabindex="-1" aria-labelledby="expEditModalLabel" aria-hidden="true"
-                  esEduc="edu"
-                  nombre={{editingItem.cargo}} 
-                  institucion={{editingItem.institucion}} 
-                  fechaDesde={{editingItem.fechaDesde}} 
-                  fechaHasta={{editingItem.fechaHasta}}
-                  descripcion={{editingItem.descripcion}}></app-edu-exp-edit>
+                    esEduc="edu"
+                    id={{editingItem.id}}
+                    nombre={{editingItem.cargo}} 
+                    institucion={{editingItem.institucion}} 
+                    fechaDesde={{editingItem.fechaDesde}} 
+                    fechaHasta={{editingItem.fechaHasta}}
+                    descripcion={{editingItem.descripcion}}
+                    (editExperience)="onEditExperience($event)"
+                  ></app-edu-exp-edit>
                 </div>
               </div>
             </div>

@@ -10,7 +10,8 @@
     ></app-buttons>
 
     <app-projects-add class="modal fade" id="addProjectModal" data-bs-backdrop="static"
-    data-bs-keyboard="false" tabindex="-1" aria-labelledby="addProjectModalLabel" aria-hidden="true"
+      data-bs-keyboard="false" tabindex="-1" aria-labelledby="addProjectModalLabel" aria-hidden="true"
+      (addProject)="onAddProject($event)"
     ></app-projects-add>
 
   </div>
